@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+package edenchain;
+
+
+message TransactionBody  {
+
+enum TXMessageType{
+
+TRANSACTION_DEPOSIT = 0;
+
+TRANSACTION_WITHDRAW = 1;
+
+TRANSACTION_TRANSFER = 2;
+
+}
+
+
+TXMessageType tx_type = 1;
+
+string to_addr = 2;
+
+string from_addr  = 3;
+
+string amount=4;
+
+string dapp_name = 5;
+
+string transfer_type = 6;
+
+}
+
+
+message Transaction {
+
+string version = 1;
+
+TransactionBody transaction = 2;
+
+string from_sign_hashed = 10;
+
+}
+
+
+message BalanceRequest {
+
+string addr = 1;
+
+}
+
+
+message BalanceResponse {
+
+string addr = 1;
+
+string amount = 2;
+
+}
+
+message BalanceResponseList{
+
+repeated BalanceResponse response=1;
+string txkey=2;
+
+}
+
+
+message TransactionHash{
+
+string txhash=1;
+
+}
+
+
+message WithdrawRequest{
+
+string eth_address=1;
+
+string tedn_amount=2;
+
+}
+
+message HDAddress{
+
+string hd_address=1;
+
+}
+
+message TransactionListRequest{
+
+int32 page = 1;
+
+int32 countperpage = 2;
+
+}
+
+message TransactionReceipt{
+
+string to_addr = 1;
+
+string from_addr= 2;
+
+string amount=3;
+
+int64 regdate=4;
+
+}
+
+message TransactionListResponse{
+
+int32 totalcount=1;
+
+int32 currentpage=2;
+
+repeated TransactionReceipt transactions=3;
+
+}
+
+message TransactionStream{
+int32 version=1;
+string data=2;
+Transaction tx=3;
+}
+
+message BalanceRollbackRequest{
+string txkey = 1;
+}

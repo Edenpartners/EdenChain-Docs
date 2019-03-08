@@ -1,10 +1,10 @@
-A Blockchain Platform for the Enterprise
-========================================
+The Engine Behind the Most Dynamic Enterprise Blockchain Infrastructure
+=======================================================================
 
 .. image:: images/edenchain_logo.png
+    :height: 70
 
-Enterprise grade permissioned distributed ledger platform that offers
-modularity and versatility for a broad set of industry use cases.
+Edenchain is a blockchain technology designed specifically with enterprises in mind. It is fast, secure and reliable third generation blockchain platform.
 
 .. raw:: html
 
@@ -13,22 +13,11 @@ modularity and versatility for a broad set of industry use cases.
    <br/><br/>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   whatis
-   whatsnew
-   key_concepts
-   getting_started
-   developapps/developing_applications
-   tutorials
-   ops_guide
-   command_ref
-   architecture
-   CONTRIBUTING
-   glossary
-   releases
-   questions
-   status
+   architecture.rst
+   authentication.rst
+   wallet.rst
 
 .. note:: If you have questions not addressed by this documentation, or run into
           issues with any of the tutorials, please visit the :doc:`questions`
