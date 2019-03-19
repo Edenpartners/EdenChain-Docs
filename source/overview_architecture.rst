@@ -94,7 +94,7 @@ modules are located in different networks, they configure a network on
 which they can securely communicate and exchange data.
 
 Service Architecture
-====================
+--------------------
 
 .. image:: images/overview_architecture2.png
     :width: 501px
@@ -156,7 +156,7 @@ The below image explains dApp, super node and hyper node relationship.
     :width: 640px
 
 Current Architecture Diagram
-============================
+----------------------------
 
 -  TestNet
 ..
