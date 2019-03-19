@@ -1,12 +1,16 @@
-System Architecture
-===================
-
+Architecture
+============
 
 .. toctree::
 
-   system_layout.rst
+   overview_architecture.rst
+   distributed_layer.rst
+   execution_layer.rst
+   bridge_layer.rst
+   service_architecture.rst
+   hyper_node_super_node.rst
+   hypernode.rst
+   supernode.rst
    core_components.rst
-   data_models.rst
-   intersystem_communication.rst
-   cicd_process.rst
    
+

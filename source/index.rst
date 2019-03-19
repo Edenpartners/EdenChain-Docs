@@ -14,10 +14,11 @@ Edenchain is a blockchain technology designed specifically with enterprises in m
 
 .. toctree::
    :maxdepth: 2
-
+   
+   edenchain_introduction.rst
    architecture.rst
-   authentication.rst
-   wallet.rst
+   dapp_development.rst
+   sdk.rst
 
 .. note:: If you have questions not addressed by this documentation, or run into
           issues with any of the tutorials, please visit the :doc:`questions`
