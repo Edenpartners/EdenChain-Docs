@@ -1,8 +1,8 @@
 The Engine Behind the Most Dynamic Enterprise Blockchain Infrastructure
 =======================================================================
 
-.. image:: images/edenchain_logo.png
-    :height: 70
+.. image:: images/home.png
+    :height: 130
 
 Edenchain is a blockchain technology designed specifically with enterprises in mind. It is fast, secure and reliable third generation blockchain platform.
 

@@ -272,10 +272,7 @@ the case for many existing solutions in the blockchain space.
 Transaction Processor
 ---------------------
 
-.. toctree::
-   :maxdepth: 1
-   
-   transaction_processor.rst
+Link : `Transaction Processor <transaction_processor.html>`_
 
 REST API
 --------
