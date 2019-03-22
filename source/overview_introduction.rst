@@ -1,3 +1,6 @@
+.. image:: images/EdenChain_Introduction/Overview.png
+    :width: 750px
+
 Overview
 ========
 

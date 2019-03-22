@@ -1,3 +1,6 @@
+.. image:: images/EdenChain_Introduction/Transaction_Processor.png
+    :width: 750px
+
 Transaction Processor
 =====================
 

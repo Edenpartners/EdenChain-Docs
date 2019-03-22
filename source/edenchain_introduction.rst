@@ -1,3 +1,6 @@
+.. image:: images/EdenChain_Introduction/Edenchain_Introduction.png
+    :width: 750px
+
 EdenChain Introduction
 ======================
 
