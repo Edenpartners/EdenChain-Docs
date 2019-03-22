@@ -1,3 +1,6 @@
+.. image:: images/Architecture/Hyper_Node.png
+    :width: 750px
+    
 Hyper Node
 ==========
 

@@ -1,3 +1,6 @@
+.. image:: images/Architecture/Architecture.png
+    :width: 750px
+
 Architecture
 ============
 

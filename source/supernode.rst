@@ -1,3 +1,6 @@
+.. image:: images/Architecture/Super_Node.png
+    :width: 750px
+
 Super Node
 ==========
 

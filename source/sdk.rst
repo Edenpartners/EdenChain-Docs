@@ -1,3 +1,6 @@
+.. image:: images/SDK/SDK.png
+    :width: 750px
+
 SDK
 ===
 

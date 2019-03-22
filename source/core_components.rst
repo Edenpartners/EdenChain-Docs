@@ -1,3 +1,6 @@
+.. image:: images/Architecture/Core_Components.png
+    :width: 750px
+
 Core Components
 ===============
 

@@ -1,4 +1,4 @@
-.. image:: images/EdenChain_Introduction/dApp_Development.png
+.. image:: images/dApp_Development/dApp_Development.png
     :width: 750px
 
 dApp Development

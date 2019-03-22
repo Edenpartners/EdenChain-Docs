@@ -1,3 +1,6 @@
+.. image:: images/Architecture/Overview.png
+    :width: 750px
+
 Overview
 ========
 
