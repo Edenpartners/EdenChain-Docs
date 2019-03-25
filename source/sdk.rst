@@ -6,6 +6,6 @@ SDK
 
 .. toctree::
 
-    Overview.rst
-    Testing_Environment_Guideline.rst
-    Installing_Configuring_SDK.rst
+    overview_sdk.rst
+    testing_environment_guideline.rst
+    installing_and_configuring_SDK.rst
