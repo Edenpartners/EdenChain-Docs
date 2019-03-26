@@ -1,10 +1,10 @@
-Testing Sample Application
-==========================
+Testing Environment Guideline
+=============================
 
 Javascript
 ----------
 
-Sample application을 clone후 수행한다.
+xSample application을 clone후 수행한다.
 
 javascript application은 reactjs를 사용하여 개발되었으며, 모든 API기능을
 사용할 수 있도록 하였다.
