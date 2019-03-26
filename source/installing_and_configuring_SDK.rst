@@ -17,9 +17,7 @@ OS환경은 무엇을 쓰든 상관없다.
 
 	npm install eden-js-sdk-client
 
-
 오류가 없을 경우 관련 library까지 같이 설치가 완료된다.
-
 
 제공 API
 --------
