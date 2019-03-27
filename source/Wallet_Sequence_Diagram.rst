@@ -1,0 +1,2 @@
+Wallet Sequence Diagram
+========================
