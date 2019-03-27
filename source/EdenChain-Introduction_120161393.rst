@@ -2,7 +2,7 @@
     :width: 750px
 
 Overview
-========
+=========
 
 Eden is a blockchain-based programmable economy platform that provides
 high-performance processing speeds which address the aforementioned
@@ -275,7 +275,7 @@ the case for many existing solutions in the blockchain space.
 Transaction Processor
 ---------------------
 
-Link : `Transaction Processor <transaction_processor.html>`_
+Link : `Transaction Processor <Transaction-Processor_120783203.html>`_
 
 REST API
 --------

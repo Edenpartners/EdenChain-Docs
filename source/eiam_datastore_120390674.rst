@@ -1,0 +1,230 @@
+=====================================
+Eden Platform : EIAM Datastore 암호화
+=====================================
+
+.. container::
+   :name: page
+
+   .. container:: aui-page-panel
+      :name: main
+
+      .. container::
+         :name: main-header
+
+         .. container::
+            :name: breadcrumb-section
+
+            #. `Eden Platform <index.html>`__
+            #. `dApp Development <dApp-Development_124780598.html>`__
+            #. `EIAM Server <EIAM-Server_11436141.html>`__
+
+         .. rubric:: Eden Platform : EIAM Datastore 암호화
+            :name: title-heading
+            :class: pagetitle
+
+      .. container:: view
+         :name: content
+
+         .. container:: page-metadata
+
+            Created by Jacki Heo, last modified by Hailee Kim on Mar 27,
+            2019
+
+         .. container:: wiki-content group
+            :name: main-content
+
+            | 
+
+            **Jira Link**
+
+            `|image0|\ LGZU-271 <https://edenchain.atlassian.net/browse/LGZU-271>`__\ **\ -
+            EIAM 수정 Done**
+
+            .. rubric:: **EIAM Datastore Encryption**
+               :name: EIAMDatastore암호화-EIAMDatastoreEncryption
+
+            **Overview**
+
+            The DataStore used by EIAM guarantees security and service
+            by Google. In the case of storing data in plain text, it is
+            to prevent users in the Eden chain to see or steal important
+            data.
+
+            | 
+
+            | 
+
+            **EUser Schema**
+
+            The entity that has user information in the current
+            DataStore is EUser, and the Schema of EUser is as follows.
+
+            | 
+
+               email
+
+               last_login
+
+               member_since
+
+               tedn_private_key
+
+               tedn_public_key
+
+               | 
+
+            | 
+
+            | 
+
+            At this time, since tedn_private_key is base64
+            (private_key), the part where encryption is required in each
+            field is tedn_private_key.
+
+            | 
+
+            **Encryption**
+
+            When encrypting a private key, the corresponding value can
+            be used later for signing, so do not use Hash and perform
+            encryption using common Symmetric Encryption. At this time,
+            AES-256 is used.
+
+            The encryption key is generated through the next two-step
+            KDF.
+
+            | 
+
+            KDF1 = SHA256(all contents of service account json file)
+
+            KDF1 should be executed before starting. The returned value
+            is a hex string.
+
+            | 
+
+            KDF2 = SHA256(email \| "EdenTag" \| KDF1)
+
+            KDF2 is used for each user so that different values ​​are
+            displayed even for the same contents. This value is returned
+            in Raw bytes.
+
+            | 
+
+            Since AES has a block size of 128 bits and the private key
+            is 256 bits, the encryption is performed through CBC, and
+            the IV is defined as the last 16 bytes of SHA256 (email).
+
+            | 
+
+            | 
+
+            --------------
+
+            --------------
+
+            | 
+
+            | 
+
+            **Overview**
+
+            EIAM에서 사용하는 DataStore는 구글이 보안 및 서비스를
+            보장하고 있으나, 평문으로 데이타를 저장하는 경우 중요한
+            데이타를 에덴체인 내부 사용자가 탈취하거나 볼 수 있으므로
+            이를 방지하고자 함이 목적이다.
+
+            | 
+
+            | 
+
+            **EUser Schema**
+
+            현재 DataStore에서 사용자 정보를 가지고 있는 Entity는 
+            EUser이며, EUser의  Schema는 다음과 같다.
+
+            | 
+
+               email
+
+               last_login
+
+               member_since
+
+               tedn_private_key
+
+               tedn_public_key
+
+               | 
+
+            | 
+
+            | 
+
+            이때,  tedn_private_key는 base64(private_key)이므로 각
+            field에서 암호화가 필요한 부분은 tedn_private_key이다.
+
+            | 
+
+            **Encryption**
+
+            Private Key를 암호화하는 경우 해당 값은 추후  Sign등에
+            사용할 수 있으므로 Hash를 사용하여서는 안되고 일반 Symmetric
+            Encryption을 사용하여 암호화를 수행한다. 이때, AES-256을
+            사용한다.
+
+            암호화 키는 다음 2단계 KDF를 통해 생성한다.
+
+            | 
+
+            KDF1 = SHA256(all contents of service account json file)
+
+            KDF1은 시작할 때 미리 수행하여 가지고 있도록 한다. 리턴되는
+            값은 Hex string이다.
+
+            | 
+
+            KDF2 = SHA256(email \| "EdenTag" \| KDF1)
+
+            KDF2는 각 사용자마다 사용하여 같은 내용이라도 다른 값이
+            나오도록 한다. 이 값은 Raw bytes로 리턴된다.
+
+            | 
+
+            AES는 block크기가 128bit이므로 private key는 256bit이기
+            때문에  CBC를 통해 암호화를 수행하도록 하며, 이때 필요한 
+            IV는 SHA256(email)의 마지막 16byte로 정의한다. 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+   .. container::
+      :name: footer
+
+      .. container:: section footer-body
+
+         Document generated by Confluence on Mar 27, 2019 15:01
+
+         .. container::
+            :name: footer-logo
+
+            `Atlassian <http://www.atlassian.com/>`__
+
+.. |image0| image:: https://edenchain.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype
+   :class: icon

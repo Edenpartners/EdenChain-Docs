@@ -1,2 +1,0 @@
-Configuring Wallet Development environment
-==========================================

@@ -7,11 +7,11 @@ EdenChain Introduction
 .. toctree::
    :maxdepth: 1
 
-   overview_introduction.rst
+   EdenChain-Introduction_120161393.rst
    permissioned_blockchain.rst
    design_principle.rst
    consensus_algorithm.rst
    namespace.rst
-   transaction_processor.rst
+   transaction_processor_120783203.rst
    rest_api.rst
 

@@ -7,9 +7,8 @@ dApp Development
 
 .. toctree::
 
-    Internal_Communication.rst
-    URL_Scheme_and_Universal_Link.rst
-    Public_API_Specification.rst
-    EIAM_Server.rst
-    Data_Model.rst
-    dApp_Development_Guideline.rst   
+    Internal_Communication_105316544.rst
+    urlscheme_80576581.rst
+    Public-Interface-API-Specification_55509016.rst
+    EIAM-Server_11436141.rst
+    Data-Models_14254471.rst

@@ -6,6 +6,6 @@ SDK
 
 .. toctree::
 
-    overview_sdk.rst
-    testing_environment_guideline.rst
-    installing_and_configuring_SDK.rst
+    SDK_122847526.rst
+    javascript.rst
+    python.rst
