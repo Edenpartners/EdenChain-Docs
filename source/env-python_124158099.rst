@@ -29,10 +29,476 @@ Install SDK & Development for Python
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified on Mar 26, 2019
+            Created by Jacki Heo, last modified by Hailee Kim on Mar 27,
+            2019
 
          .. container:: wiki-content group
             :name: main-content
+
+            #. .. rubric:: Development Environment
+                  :name: InstallSDK&DevelopmentforPython-DevelopmentEnvironment
+
+            Linux/Windows/Mac OS 
+
+            It was developed only for python3.
+
+            | 
+
+            .. rubric:: 2. Installation
+               :name: InstallSDK&DevelopmentforPython-2.Installation
+
+            In the project directory, do the following.
+
+            | 
+
+            ::
+
+               pip install  eden_client_api
+
+            | 
+            | If there is no error, installation to the relevant library
+              is completed.
+
+            .. rubric:: 3. Provided API
+               :name: InstallSDK&DevelopmentforPython-3.ProvidedAPI
+
+            All of the following APIs are methods of the EdenClientApi
+            () class.
+
+            | 
+
+            -  .. rubric:: Network Settings
+                  :name: InstallSDK&DevelopmentforPython-NetworkSettings
+
+            Set up the network of the Edenchain to connect through the
+            SDK. There are currently three networks, and you have to set
+            up a network to test, which is always the first thing you
+            need to initialize when using the SDK.
+
+            | 
+
+            .. rubric:: (1)  Network constant
+               :name: InstallSDK&DevelopmentforPython-(1)Networkconstant
+
+            ::
+
+               EDEN_MAINNET_NETWORK      : EdenChain MainNet General Release 
+               EDEN_CANDIDATE_NETWORK    : EdenChain Candidate Release
+               EDEN_BETA_NETWORK         : EdenChain Beta Release
+
+            | 
+
+            .. rubric:: (2) Network Settings
+               :name: InstallSDK&DevelopmentforPython-(2)NetworkSettings
+
+            It is to initialize API Class, after which all APIs are
+            called using the class.
+
+            | 
+
+               EdenClientApi(network_id)
+
+            ::
+
+               parameter  :
+                            network_id puts the network constants above.
+
+               return     :
+                            A Python class is created. Use this instance to call the API.
+
+            -  .. rubric:: Authentication
+                  :name: InstallSDK&DevelopmentforPython-Authentication
+
+            Only sign in to Edenchain is supported. Sign In provides
+            sign-in to the pre-created account.
+
+            | 
+
+               authenticate_user( email, password)
+
+            ::
+
+               parameter  :
+                            email    (String) :  An email address to use for future accounts.
+                            password (String) : An password to use for future accounts.
+               return     :
+                            token   (String)  :  Returns the authentication token of the user to be used in the API call.
+
+            | 
+
+            -  .. rubric:: Synchronous apis
+                  :name: InstallSDK&DevelopmentforPython-Synchronousapis
+
+            Each API has an async version and a default sync version,
+            and async has a \_async appended to the function name.
+
+            | 
+
+               get_user_info(token='')
+
+            Returns user information in the Edenchain. Returns the
+            dictionary type, token address or token deposit, and
+            Ethereum address information to be used for withdrawing.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+
+               return:
+                            {}                    : Returns a Dictionary, with the following information.
+
+                                                  email  ( String ) :  User email address
+
+                                                  eth_address (String ) : It is the ethereum address of the user added / deleted by api, and may contain multiple addresses as delimiter with '|'.
+
+                                                                          It will refuse to withdraw or deposit to unregistered address in API.
+                                                   tedn_public_key (String) Eden chain User wallet address
+
+            | 
+
+            | 
+
+               get_user_balance(token='')
+
+            Returns the user account balance of the Eden chain.
+
+            | 
+
+            ::
+
+               parameter  :
+                           token    ( String ) :  This is the token value obtained at the time of authentication.
+               return: 
+                           int                 : decimal is the Token balance of 18
+
+            | 
+
+               get_user_transaction(token='', page = 0, countperpage =
+               0)
+
+            It is an API to get the transaction list of the user.
+            Returns information from the transaction of the user
+            corresponding to iamtoken.
+
+            | 
+
+            ::
+
+               parameter  :
+                           token      ( String ) :  This is the token value obtained at the time of authentication.
+                           page  (int)           : Specify whether to return the transaction for some pages.
+                           countperpage (int)    : By specifying the transaction count of each page and specifying the page, you specify how many transactions are returned.
+
+               return:
+                           [{}]                  :   Returns a list of objects, each of which has the following information in dictionary form.
+                                                  from_addr  (String):  The address on Edenchain where the amount is withdrawn.
+                                                  to_addr       (String) : The address on the Edenchain where the amount is deposited.
+                                                  amount     (int )       :  token amount corresponding to tx, and it is decimal 18.
+                                                  regdate    (int)         : The time at which tx was performed, in seconds.
+
+            ..
+
+               get_coin_server_address(token='')
+
+            Returns the CoinServer Ethereum Address. It returns the
+            address of Ropsten Ethereum Testnet in Beta Release and
+            Candidate Release, and returns the address of Ethereum
+            MainNet in General Release.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+
+               return:
+                            String            : Returns the Ethereum address of the Coin Server.
+
+            | 
+
+               add_eth_address(token='', private_key='')
+
+            It is used to add Ethereum address in the user account. In
+            order to prevent the misuse of the address of the other
+            person, the address is signed and sent, and the server
+            processes it only when the signature is correct.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained in authentication
+                            private_key (String)  : Ethereum Private Key is used to generate the following address object using the corresponding key and forward it to the server side.
+                                                    The following is an address Object.
+                                                    address  (String) : Ethereum Checksum Address
+                                                    public_key (String) : Ethereum public key. This is used to verify the signature.
+                                                    signature ( String ) : After the keccak256 hash of address, it is signed with Ethereum private key.
+
+               return    :
+                             Boolean   : It indicates the success or failure of Ethereum address addition.
+
+            | 
+
+               del_eth_address( token='', private_key='')
+
+            It is used to put ethereum address in user account. In order
+            to prevent the misuse of the address of the other person,
+            the address is signed and sent, and the server processes it
+            only when the signature is correct.
+
+            | 
+
+            ::
+
+               parameter  :
+                           token      ( String ) :  This is the token value obtained in authentication
+                           private_key (String)  : Ethereum Private Key is used to generate the following address object using the corresponding key and forward it to the server side.
+                                                   The followings are address Objects. 
+                                                   address  (String) : Ethereum Checksum Address
+                                                   public_key (String) : Ethereum public Key.이며, signature를 verify할 때 사용한다.
+                                                   signature ( String ) : address를 keccak256 해시 후 이를 ethereum private key로 sign한 값이다.
+
+               return    :
+                          Boolean   : It indicates the success or failure of Ethereum address deletion.
+
+            | 
+
+               deposit_token(token='', txhash='')
+
+            It is the API that is called when the Ethereum ERC20 EDN
+            Token is passed for the Edenchain service.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+                            txhash          (String)   : Transaction hash value after ethereum transfer
+
+               return     :
+                             Boolean   : Indicates the success or failure of the API.
+
+            | 
+
+               withdraw_token(token='', ethaddress='',amount=0)
+
+            This is the API that is called when the token of the Eden
+            Chain service is passed to Ethereum's ERC20 EDN Token.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  Authentication시 얻어지는 token 값이다.
+                            ethaddress   (String ) :  The address on the Ethereum you want to receive, which must be registered by addEthAddress () in advance.
+                            amount        (int)        : The amount you want to receive and it is decimal 18.
+
+               return     :
+                            txhash  (String): Txhash value generated after Ethereum transfer in Coin Server. You can use that value to determine if the withdraw was successful.
+
+            | 
+
+            -  .. rubric:: Asynchronous apis
+                  :name: InstallSDK&DevelopmentforPython-Asynchronousapis
+
+            Each API has an async version and a default sync version,
+            and async has a \_async appended to the function name.
+
+            | 
+
+               get_user_info_async(token='')
+
+            And returns user information on the Edenchain. Returns the
+            dictionary type, token address or token deposit, and
+            Ethereum address information to be used for withdrawing.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+
+               return:
+                            {}                    : Returns a Dictionary, with the following information.
+
+                                                  email  ( String ) :  User email address
+                                                  eth_address (String ) : It is the ethereum address of the user added / deleted by api, and may contain multiple addresses as delimiter with '|'.
+
+                                                                          withdraw or deposit of api will refuse to withdraw or deposit to unregistered address.
+                                                  tedn_public_key (String )  Edenchain user wallet address
+
+            | 
+
+            | 
+
+               get_user_balance_async(token='')
+
+            Returns the user account Balance on Edenchain.
+
+            | 
+
+            ::
+
+               parameter  :
+                           token    ( String ) :  This is the token value obtained in authentication
+
+               return: 
+                           int                 : decimal is the Token balance of 18
+
+            | 
+
+               get_user_transaction_async(token='', page = 0,
+               countperpage = 0)
+
+            It is an API to get the transaction list of the user.
+            Returns information from the transaction of the user
+            corresponding to iamtoken.
+
+            | 
+
+            ::
+
+               parameter  :
+                           token      ( String ) :  This is the token value obtained in authentication
+                           page  (int)           : Specifies the next page transaction to return.
+                           countperpage (int)    : By specifying the transaction count of each page and specifying the page, you can specify how many transactions are returned.
+
+               return:
+                           [{}]                  :   Returns a list of objects, each of which has the following information in dictionary form.
+                                                  from_addr  (String):  The address on the Edenchain where the amount is withdrawn.
+                                                  to_addr       (String) : The address on the Edenchain where the amount is deposited.
+                                                  amount     (int )       :  token amount corresponding to tx, and it is decimal 18.
+                                                  regdate    (int)         : The time at which tx was performed, in seconds.
+
+            ..
+
+               get_coin_server_address_async(token='')
+
+            Returns to the CoinServer Ethereum Address. It returns the
+            address of Ropsten Ethereum Testnet in Beta Release and
+            Candidate Release, and returns the address of Ethereum
+            MainNet in General Release.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  AThis is the token value obtained at the time of authentication.
+
+               return:
+                            String            : Returns the Ethereum address of the Coin Server.
+
+            | 
+
+               add_eth_address_async(token='', private_key='')
+
+            It is used to put Ethereum address in the user account. In
+            order to prevent the misuse of the address of the other
+            person, the address is signed and sent, and the server
+            processes it only when the signature is correct.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+                            private_key (String)  : Ethereum Private Key is used to generate the following address object using the corresponding key and forward it to the server side.
+                                                    The followings are address Objects. 
+                                                    address  (String) : Ethereum Checksum Address
+                                                    public_key (String) : Ethereum public key. This is used to verify the signature.
+                                                    signature ( String ) : After the keccak256 hash of address, it is signed with Ethereum private key.
+
+               return    :
+                             Boolean   : It indicates the success or failure of Ethereum address addition.
+
+            | 
+
+               del_eth_address_async( token='', private_key='')
+
+            It is used to put Ethereum address in the user account. In
+            order to prevent the misuse of the address of the other
+            person, the address is signed and sent, and the server
+            processes it only when the signature is correct.
+
+            | 
+
+            | 
+
+            ::
+
+               parameter  :
+                           token      ( String ) :  This is the token value obtained at the time of authentication.
+                           private_key (String)  : Ethereum Private Key is used to generate the following address object using the corresponding key and forward it to the server side.
+                                                   The followings are address Objects. 
+                                                   address  (String) : Ethereum Checksum Address
+                                                   public_key (String) : Ethereum public Key.It is used to verify the signature.
+                                                   signature ( String ) : After the keccak256 hash of address, it is a value signed with Ethereum private key.
+
+               return    :
+                          Boolean   : It indicates the success or failure of Ethereum address deletion.
+
+            | 
+
+               deposit_token_async(token='', txhash='')
+
+            It is the API that is called when the Ethereum ERC20 EDN
+            Token is passed for the Eden Chain service.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :   This is the token value obtained at the time of authentication.
+                            txhash          (String)   : Transaction hash value after Ethereum transfer
+
+               return     :
+                             Boolean   : Indicates the success or failure of the API.
+
+            | 
+
+               withdraw_token_async(token='', ethaddress='',amount=0)
+
+            This is the API that is called when the token of the Eden
+            Chain service is passed to Ethereum's ERC20 EDN Token.
+
+            | 
+
+            ::
+
+               parameter  :
+                            token      ( String ) :  This is the token value obtained at the time of authentication.
+                            ethaddress   (String ) :  The address on the ethereum you want to receive, which must be registered by addEthAddress () in advance.
+                            amount        (int)        : The quantity you want to receive and it is decimal 18..
+
+               return     :
+                            txhash  (String): Txhash value generated after Ethereum transfer in Coin Server. You can use that value to determine if the withdraw was successful.
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            --------------
+
+            --------------
+
+            | 
+
+            | 
 
             #. .. rubric:: 개발 환경
                   :name: InstallSDK&DevelopmentforPython-개발환경
@@ -103,7 +569,7 @@ Install SDK & Development for Python
                             Python class가 생성된다. 이 instance를 사용하여 API를 호출한다.
 
             -  .. rubric:: Authentication
-                  :name: InstallSDK&DevelopmentforPython-Authentication
+                  :name: InstallSDK&DevelopmentforPython-Authentication.1
 
             Edenchain으로의 Sign in만을 지원한다. Sign In은 기 생성된
             계정으로의 Sign  In을 제공한다.
@@ -124,7 +590,7 @@ Install SDK & Development for Python
             | 
 
             -  .. rubric:: Synchronous apis
-                  :name: InstallSDK&DevelopmentforPython-Synchronousapis
+                  :name: InstallSDK&DevelopmentforPython-Synchronousapis.1
 
             각 api는 async버전과 기본 sync버전이 있으며, async의 경우는
             함수 이름 뒤에 \_async가 붙어있는 형태로 되어 있다.
@@ -301,7 +767,7 @@ Install SDK & Development for Python
             | 
 
             -  .. rubric:: Asynchronous apis
-                  :name: InstallSDK&DevelopmentforPython-Asynchronousapis
+                  :name: InstallSDK&DevelopmentforPython-Asynchronousapis.1
 
             각 api는 async버전과 기본 sync버전이 있으며, async의 경우는
             함수 이름 뒤에 \_async가 붙어있는 형태로 되어 있다.
@@ -482,7 +948,7 @@ Install SDK & Development for Python
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 27, 2019 18:14
+         Document generated by Confluence on Mar 27, 2019 18:40
 
          .. container::
             :name: footer-logo

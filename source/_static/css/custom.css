@@ -210,3 +210,15 @@ a:visited {
 .page-metadata {
     display: none;
 }
+
+#title-heading {
+    display: none;
+}
+
+#urlschemeuniversallink-jiralink {
+    display: none;
+}
+
+#urlschemeuniversallink-defineurlschemeanduniversallink {
+    display: none;
+}
