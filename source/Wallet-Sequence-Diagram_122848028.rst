@@ -182,31 +182,31 @@ Eden Platform : Wallet Sequence Diagram
             .. container:: greybox
 
                |image0|
-               `image2019-3-25_12-58-18.png <image/122848028/122880821.png>`__
+               `image2019-3-25_12-58-18.png <_image/122848028/122880821.png>`__
                (image/png)
                |image1|
-               `image2019-3-25_12-59-2.png <image/122848028/122815353.png>`__
+               `image2019-3-25_12-59-2.png <_image/122848028/122815353.png>`__
                (image/png)
                |image2|
-               `image2019-3-25_13-2-17.png <image/122848028/122848038.png>`__
+               `image2019-3-25_13-2-17.png <_image/122848028/122848038.png>`__
                (image/png)
                |image3|
-               `image2019-3-25_15-42-17.png <image/122848028/122815366.png>`__
+               `image2019-3-25_15-42-17.png <_image/122848028/122815366.png>`__
                (image/png)
                |image4|
-               `image2019-3-25_15-43-24.png <image/122848028/123371526.png>`__
+               `image2019-3-25_15-43-24.png <_image/122848028/123371526.png>`__
                (image/png)
                |image5|
-               `image2019-3-25_15-44-10.png <image/122848028/122946595.png>`__
+               `image2019-3-25_15-44-10.png <_image/122848028/122946595.png>`__
                (image/png)
                |image6|
-               `image2019-3-25_15-51-2.png <image/122848028/122815374.png>`__
+               `image2019-3-25_15-51-2.png <_image/122848028/122815374.png>`__
                (image/png)
                |image7|
-               `image2019-3-25_15-52-4.png <image/122848028/122946600.png>`__
+               `image2019-3-25_15-52-4.png <_image/122848028/122946600.png>`__
                (image/png)
                |image8|
-               `image2019-3-25_15-52-37.png <image/122848028/122815379.png>`__
+               `image2019-3-25_15-52-37.png <_image/122848028/122815379.png>`__
                (image/png)
 
    .. container::
