@@ -275,7 +275,7 @@ the case for many existing solutions in the blockchain space.
 Transaction Processor
 ---------------------
 
-Link : `Transaction Processor <Transaction-Processor_120783203.html>`_
+Link : `Transaction Processor <transaction_processor_120783203.html>`_
 
 REST API
 --------
