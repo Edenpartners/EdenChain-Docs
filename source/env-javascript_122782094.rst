@@ -1,5 +1,5 @@
 ========================================================
-Eden Platform : Install SDK & Development for Javascript
+Install SDK & Development for Javascript
 ========================================================
 
 .. container::
@@ -15,11 +15,11 @@ Eden Platform : Install SDK & Development for Javascript
             :name: breadcrumb-section
 
             #. `Eden Platform <index.html>`__
+            #. `EdenChain Doc <EdenChain-Doc_120848728.html>`__
             #. `SDK_Docs <SDK_Docs_124813380.html>`__
-            #. `SDK <SDK_122847526.html>`__
             #. `Javascript <Javascript_122848134.html>`__
 
-         .. rubric:: Eden Platform : Install SDK & Development for
+         .. rubric:: Install SDK & Development for
             Javascript
             :name: title-heading
             :class: pagetitle
@@ -29,10 +29,430 @@ Eden Platform : Install SDK & Development for Javascript
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified on Mar 26, 2019
+            Created by Jacki Heo, last modified by Hailee Kim on Mar 27,
+            2019
 
          .. container:: wiki-content group
             :name: main-content
+
+            #. .. rubric:: Development Environment
+                  :name: InstallSDK&DevelopmentforJavascript-DevelopmentEnvironment
+
+            The OS environment does not matter what you write.
+
+            For development, Node v10 or higher, NPM v6.9 or higher
+            should be installed.
+
+            | 
+
+            .. rubric:: 2. Install
+               :name: InstallSDK&DevelopmentforJavascript-2.Install
+
+            In the project directory, do the following.
+
+            | 
+
+            ::
+
+               npm install eden-js-sdk-client
+
+            | 
+
+            If there is no error, installation to the relevant library
+            is completed.
+
+            .. rubric:: 3. Provided API
+               :name: InstallSDK&DevelopmentforJavascript-3.ProvidedAPI
+
+            All APIs are provided through the edensdk class.
+
+            | 
+
+            -  .. rubric:: Network settings 
+                  :name: InstallSDK&DevelopmentforJavascript-Networksettings
+
+            Set up the network of the Edenchain to connect through the
+            SDK. There are currently three networks. You have to set up
+            a network to test, which is always the first thing you need
+            to do when using the SDK.
+
+            | 
+
+            .. rubric:: (1)  Network constant
+               :name: InstallSDK&DevelopmentforJavascript-(1)Networkconstant
+
+            ::
+
+               EDEN_MAINNET_NETWORK      : Edenchain MainNet General Release 
+               EDEN_CANDIDATE_NETWORK    : Edenchain Candidate Release
+               EDEN_BETA_NETWORK         : Edenchain Beta Release
+
+            | 
+
+            .. rubric:: (2) Network Configuration API
+               :name: InstallSDK&DevelopmentforJavascript-(2)NetworkConfigurationAPI
+
+            The API must always be executed first.
+
+            | 
+
+               boolean initApp(network_id)
+
+            ::
+
+               parameter  :
+                            network_id puts the above network constants.
+
+               return     :
+                            If true, initialization is successful; if false, initialization failed.
+                             This usually happens when you set up a network that does not support it.
+
+            | 
+
+            -  .. rubric:: Authentication
+                  :name: InstallSDK&DevelopmentforJavascript-Authentication
+
+            It provides a sign in and sign up with Edenchain. Sign Up
+            provides an Edenchain for creating accounts and wallets, and
+            Sign In provides sign-in to pre-created accounts.
+
+            | 
+
+            .. rubric:: (1) Sign Up
+               :name: InstallSDK&DevelopmentforJavascript-(1)SignUp
+
+            Creates an account if you do not have an account
+
+            | 
+
+               app.auth().createUserWithEmailAndPassword( email,
+               password )
+
+            ::
+
+               parameter  :
+                            email (string): email address to use for future accounts.
+                             password (string): The password of the account to be used in the future.
+
+            | 
+
+            .. rubric:: (2) Sign In
+               :name: InstallSDK&DevelopmentforJavascript-(2)SignIn
+
+            If you have an account, you can sign in to that account.
+            Sign In fails if there is no account or the password is
+            incorrect.
+
+            | 
+
+               app.auth().signInWithEmailAndPassword( email, password )
+
+            ::
+
+               parameter : 
+                           email         (String)  : Account to sign In할 계정이다.
+                           password  (String) :  Passsword to sing in the asccount
+               return    :
+                           Promise is returned. If successful, it is not handled directly, but uses the Auth Change Event defined below.
+                            If it is an error, it can be processed by .catch ((error) => {}) and error can be checked by error.
+
+            .. rubric:: (3) Sign Out
+               :name: InstallSDK&DevelopmentforJavascript-(3)SignOut
+
+            If it is currently signed in, call it and change it to Sign
+            Out state. After this call, onAuthStateChanged () is not
+            called and auto sign-in does not occur.
+
+            | 
+
+               app.auth().signOut()
+
+            | 
+
+            .. rubric:: (4) Authentication Change Event
+               :name: InstallSDK&DevelopmentforJavascript-(4)AuthenticationChangeEvent
+
+            Specifies the function to be called when the authentication
+            state changes. This function is also called if you are
+            logged in automatically after you are already logged in.
+
+               app.auth().onAuthStateChanged( (user) => {} )
+
+            | 
+
+            The user specified in callback is the object that contains
+            the user's information.
+
+            The user can get token information to be used in the API.
+
+            The call is as follows. Since getIdToken () is async, it can
+            be obtained via await.
+
+            | 
+
+            ::
+
+               token = await user.getIdToken()
+
+            Therefore, the function to be called when it is needed
+            should be specified as async.The function must call
+            signInUser () or signOutUser () of , depending on whether
+            the user is a user.
+
+            | 
+
+            -  .. rubric:: apis
+                  :name: InstallSDK&DevelopmentforJavascript-apis
+
+            The API instance provides the api except authentication.
+            Call it from edensdk.apis.
+
+            To use all api, you need a token that you received when
+            authenticating. The token is used to invoke the api, and all
+            modules in the Edenchain use the token to verify the
+            authentication.
+
+            All APIs are async.
+
+            | 
+
+            | 
+
+               async getCoinServerAddress(iamtoken)
+
+            CoinServer Returns the Ethereum Address. It returns the
+            address of Ropsten Ethereum Testnet in Beta Release and
+            Candidate Release, and returns the address of Ethereum
+            MainNet in General Release.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken ( String):  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+
+               return     :
+                            String            : Returns the Ethereum address of the Coin Server.
+
+
+            ..
+
+               async getUserBalance(iamtoken)
+
+            Returns the user account balance of the Eden chain.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+
+               return     :
+                            int                 : Token blanace is decimal 18.
+
+            | 
+
+               async getUserInfo(iamtoken)
+
+            It returns user information on the Edenchain. It mainly
+            returns token address, token deposit, or ethereum address
+            information to be used for withdraw.
+
+            | 
+
+            ::
+
+               parameter:
+                          iamtoken  ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+
+               return:
+                         {}                    : Returns an Object, with the following information:
+                                email  ( String )       :  User email address
+                                eth_address (String )   : It is the ethereum address of the user added / deleted by api, and may contain multiple addresses as delimiter with '|'.
+                                                          withdraw or deposit of api will refuse to withdraw or deposit to unregistered address.
+                                tedn_public_key (String):  Edenchain user wallet address
+
+            | 
+
+               async signInUser(iamtoken)
+
+            It is an API that is used to sign in to the internal module
+            separately from Authentication. When authentication ()
+            succeeds, it should be called at any time. Therefore, it is
+            usually called in the Authentication Event.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+
+               return     :
+                            Boolean             : signIn indicates success or failure.
+
+            ..
+
+               async signOutUser(iamtoken)
+
+            This is the API that is called when signout is successful in
+            the Authentication function. The call is not Mandatory and
+            is usually called in an Authentication Event.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken      ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+
+               return     :
+                            Boolean   : It indicates success or failure of signIn .
+
+            ..
+
+               async getTransactionList(iamtoken, page, countperpage)
+
+            It is an API to get the transaction list of the user.
+            Returns information from the transaction of the user
+            corresponding to iamtoken.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+                            page     (int)      : Specifies the next page transaction to return.
+                            countperpage (int)  : By specifying the transaction count for each page and specifying the page, you specify how many transactions are returned.
+
+               return:
+                            [{}]        :   Returns a list of objects and each of which has the following information:
+                                         from_addr  (String) :  Address in Edenchain to withdraw the amount
+                                         to_addr    (String) : Address in Edenchain to deposit the amount
+                                         amount     (int )   :  token amount corresponding to tx, and decimal 18.
+                                         regdate    (int)    : The time at which tx was performed, in seconds.
+
+            | 
+
+               async addEthAddress(iamtoken,address)
+
+            It is used to put Ethereum address in the user account. In
+            order to prevent the misuse of the address of the other
+            person, the address is signed and sent. The server processes
+            it only when the signature is correct.
+
+            | 
+
+            ::
+
+               parameter  :
+                           iamtoken      ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+                           address        (Object)  : An Object with the following information. The following objects are easily created by the providing api.
+                           address  (String)        : Ethereum Checksum Address
+                           public_key (String)      : Ethereum public key. This is used to verify the signature.
+                           signature ( String )     :  It is a value signed with Ethereum private key, after the keccak256 hash of address.
+               return     :
+                           Boolean   : It indicates the success or failure of Ethereum address addition.
+
+            ..
+
+               async delEthAddress(iamtoken,address)
+
+            It is used to delete the Ethereum address of the user
+            account. In order to prevent the misuse of the address of
+            the other person, the address is signed and sent. The server
+            processes it only when the signature is correct.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken      ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+                            address        (Object)  : An Object with the following information. The following objects are easily created by the providing api.
+                            address  (String)        : Ethereum Checksum Address
+                            public_key (String)      : Ethereum public key. This is used to verify the signature.
+                            signature ( String )     : It is a value signed with Ethereum private key, after the keccak256 hash of address.
+
+               return     :
+                            Boolean   : It indicates the success or failure of Ethereum address deletion.
+
+            | 
+
+               async depositTokenToEdenChain(iamtoken,txhash)
+
+            It is the API that is called when the Ethereum ERC20 EDN
+            Token is passed for the Edenchain service.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken      ( String ) :  This is a token authenticated by getIdToken () of the user object obtained at the time of authentication.
+                            txhash          (String)   : Transaction hash value after Ethereum transfer
+
+               return     :
+                             Boolean   : Indicates the success or failure of the API.
+
+            ..
+
+               async withdrawTokenToEdenChain(iamtoken,ethaddress,
+               amount)
+
+            It is the API that is called when the Ethereum ERC20 EDN
+            Token is passed for the Edenchain service.
+
+            | 
+
+            ::
+
+               parameter  :
+                            iamtoken   ( String ):  It is the API that is called when the Ethereum ERC20 EDN Token is passed for the Edenchain service.
+                            ethaddress (String ) :  The address on the Ethereum to deposit. It must be registered by addEthAddress () in advance.
+                            amount     (int)     : Amount to receive and it is decimal 18.
+
+               return      :
+                            txhash  (String): Txhash value generated after Ethereum transfer in Coin Server. You can use that value to determine if the withdraw was successful.
+
+            | 
+
+            -  .. rubric:: utils
+                  :name: InstallSDK&DevelopmentforJavascript-utils
+
+            Called in the form of edensdk.utils, which is not related to
+            api, but has the necessary utility function.
+
+            | 
+
+               makeAddressObject(private_key)
+
+            This is a helper function to easily create the address
+            object needed for the API that is called when the user adds
+            / deletes the Ethereum address to Edenchain with the
+            Ethereum private key.
+
+            | 
+
+            ::
+
+               paramteter  :
+                             private_key (String): Ethereum Private key.
+
+               return      : 
+                             address  (Object)  : An Object with the following information. The following objects are easily created by the providing api.
+                                      address  (String)    : Ethereum Checksum Address
+                                      public_key (String)  : Ethereum public key. This is used to verify the signature.
+                                      signature ( String ) : After the keccak256 hash of address, it is signed with Ethereum private key.
+
+            --------------
+
+            --------------
+
+            | 
 
             #. .. rubric:: 개발 환경
                   :name: InstallSDK&DevelopmentforJavascript-개발환경
@@ -106,7 +526,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             -  .. rubric:: Authentication
-                  :name: InstallSDK&DevelopmentforJavascript-Authentication
+                  :name: InstallSDK&DevelopmentforJavascript-Authentication.1
 
             Edenchain으로의 Sign in과 Sign up을 지원한다.
 
@@ -117,7 +537,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             .. rubric:: (1) Sign Up
-               :name: InstallSDK&DevelopmentforJavascript-(1)SignUp
+               :name: InstallSDK&DevelopmentforJavascript-(1)SignUp.1
 
             계정이 없을 경우 계정을 생성한다.
 
@@ -139,7 +559,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             .. rubric:: (2) Sign In
-               :name: InstallSDK&DevelopmentforJavascript-(2)SignIn
+               :name: InstallSDK&DevelopmentforJavascript-(2)SignIn.1
 
             계정이 있을 경우 해당 계정으로 Sign In이 가능하다. 없거나
             암호가 틀릴 경우 Sign In이 실패한다.
@@ -161,7 +581,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             .. rubric:: (3) Sign Out
-               :name: InstallSDK&DevelopmentforJavascript-(3)SignOut
+               :name: InstallSDK&DevelopmentforJavascript-(3)SignOut.1
 
             현재 Sign In되어 있는 경우 호출하여 Sign Out상태로 변경한다.
             호출하면 이후에는  onAuthStateChanged()가 호출되지 않아 자동
@@ -174,7 +594,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             .. rubric:: (4) Authentication Change Event
-               :name: InstallSDK&DevelopmentforJavascript-(4)AuthenticationChangeEvent
+               :name: InstallSDK&DevelopmentforJavascript-(4)AuthenticationChangeEvent.1
 
             인증 상태가 변경될 때 호출되는 함수를 지정한다. 이미
             로그인되어 있을 경우 자동으로 로그인을 하는 경우에도 역시
@@ -209,7 +629,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             -  .. rubric:: apis
-                  :name: InstallSDK&DevelopmentforJavascript-apis
+                  :name: InstallSDK&DevelopmentforJavascript-apis.1
 
             API instance는 인증을 제외한 나머지 api를 제공한다.
             edensdk.apis에서 호출한다.
@@ -423,7 +843,7 @@ Eden Platform : Install SDK & Development for Javascript
             | 
 
             -  .. rubric:: utils
-                  :name: InstallSDK&DevelopmentforJavascript-utils
+                  :name: InstallSDK&DevelopmentforJavascript-utils.1
 
             edensdk.utils의 형태로 호출하며, api와는 상관없지만 필요한
             Utiltity함수를 가지고 있다.
@@ -454,9 +874,10 @@ Eden Platform : Install SDK & Development for Javascript
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 27, 2019 15:01
+         Document generated by Confluence on Mar 27, 2019 18:14
 
          .. container::
             :name: footer-logo
 
             `Atlassian <http://www.atlassian.com/>`__
+
