@@ -197,3 +197,16 @@ a:visited {
 .rst-content .line-block {
     margin-left: 5px;
 }
+
+#footer {
+    display: none;
+}
+
+
+#breadcrumb-section {
+    display: none;
+}
+
+.page-metadata {
+    display: none;
+}
