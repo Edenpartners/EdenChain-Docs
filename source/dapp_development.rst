@@ -6,6 +6,7 @@ dApp Development
 
 
 .. toctree::
+    :maxdepth: 2
 
     Internal_Communication_105316544.rst
     urlscheme_80576581.rst
