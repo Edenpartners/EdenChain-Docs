@@ -1,0 +1,136 @@
+====================================
+EIAM Data Encryption
+====================================
+
+.. container::
+   :name: page
+
+   .. container:: aui-page-panel
+      :name: main
+
+      .. container::
+         :name: main-header
+
+         .. container::
+            :name: breadcrumb-section
+
+            #. `Eden Platform <index.html>`__
+            #. `EdenChain Doc <EdenChain-Doc_120848728.html>`__
+            #. `dApp Development <dApp-Development_124780598.html>`__
+            #. `EIAM Server <EIAM-Server_11436141.html>`__
+
+         .. rubric:: Eden Platform : EIAM Data Encryption
+            :name: title-heading
+            :class: pagetitle
+
+      .. container:: view
+         :name: content
+
+         .. container:: page-metadata
+
+            Created by Jacki Heo, last modified by Jay Lee on Mar 28,
+            2019
+
+         .. container:: wiki-content group
+            :name: main-content
+
+            | 
+
+            **Overview**
+
+            .. container::
+
+               .. container::
+
+                  The DataStore used by EIAM guarantees security and
+                  service by Google.
+
+            In the case of storing data in plain text, it is to prevent
+            users in the Eden chain to see or steal important data.
+
+            | 
+
+            | 
+
+            **EUser Schema**
+
+            The entity that has user information in the current
+            DataStore is EUser, and the Schema of EUser is as follows.
+
+            | 
+
+               email
+
+               last_login
+
+               member_since
+
+               tedn_private_key
+
+               tedn_public_key
+
+               | 
+
+            | 
+
+            | 
+
+            At this time, since tedn_private_key is base64
+            (private_key), the part where encryption is required in each
+            field is tedn_private_key.
+
+            | 
+
+            **Encryption**
+
+            When encrypting a private key, the corresponding value can
+            be used later for signing, so do not use Hash and perform
+            encryption using common Symmetric Encryption. At this time,
+            AES-256 is used.
+
+            The encryption key is generated through the next two-step
+            KDF.
+
+            | 
+
+            KDF1 = SHA256(all contents of service account json file)
+
+            KDF1 should be executed before starting. The returned value
+            is a hex string.
+
+            | 
+
+            KDF2 = SHA256(email \| Tag-String \| KDF1)
+
+            KDF2 is used for each user so that different values ​​are
+            displayed even for the same contents. This value is returned
+            in Raw bytes. Tag-String can be changed to anything later.
+
+            | 
+
+            Since AES has a block size of 128 bits and the private key
+            is longer than that, so the encryption is performed through
+            CBC, and the IV is defined as the last 16 bytes of SHA256
+            (email).
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+            | 
+
+
