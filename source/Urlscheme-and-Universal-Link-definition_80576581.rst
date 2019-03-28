@@ -79,7 +79,7 @@ Urlscheme and Universal Link definition
 
                -  Connect to AppStore:
                   itms-apps://itunes.apple.com/app/id1234567890
-                  (appstore에 upload후 app id가 결정되면 업데이트.)
+                  (Upload to the app store and update when app id is determined.)
                -  Withdraw:
                   https://ewallet.edenchain.io/withdraw/\ ?id=userid_hash
                -  Deposit:
