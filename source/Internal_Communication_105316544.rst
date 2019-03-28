@@ -77,9 +77,9 @@ Message Encryption/Decryption for Internal communication
 
             The following image explain how DHKE works intuitively. 
 
-            | 
 
-            Image result for Diffie-Hellman key exchange
+            .. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Diffie-Hellman_Key_Exchange.svg/250px-Diffie-Hellman_Key_Exchange.svg.png
+
 
             Source - Wiki
 

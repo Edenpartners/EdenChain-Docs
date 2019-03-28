@@ -59,11 +59,15 @@ Wallet Sequence Diagram
             The sequence diagram shows the process required to import or
             restore EDN wallet.
 
+            .. image:: images/122848028/122880821.png
+
             .. rubric:: Creating EDN Wallet
                :name: WalletSequenceDiagram-CreatingEDNWallet
 
             The digram explains the steps for EDN wallet creation. It is
             based on BIP 39, the process starts with seed phrase.
+
+            .. image:: images/122848028/122815353.png
 
             .. rubric:: TEDN Deposit
                :name: WalletSequenceDiagram-TEDNDeposit
@@ -72,11 +76,15 @@ Wallet Sequence Diagram
             EDN/TEDN exchange behind the scene. TEDN deposit is only
             allowed by EDN to TEDN exchange. 
 
+            .. image:: images/122848028/122815366.png
+
             .. rubric:: TEDN Withdrawal
                :name: WalletSequenceDiagram-TEDNWithdrawal
 
             TEDN withdrawal takes place only in super node, hyper node
             is supposed to have anchoring data. 
+
+            .. image:: images/122848028/123371526.png
 
             .. rubric:: Pin Code Creation
                :name: WalletSequenceDiagram-PinCodeCreation
@@ -84,15 +92,21 @@ Wallet Sequence Diagram
             For better usability, Eden's wallet encourages user to use
             pin code instead of password.
 
+            .. image:: images/122848028/122946595.png
+
             .. rubric:: Adding EDN through KyberSwap
                :name: WalletSequenceDiagram-AddingEDNthroughKyberSwap
 
-            User can convert ETH to EDN through kyberswap. 
+            User can convert ETH to EDN through kyberswap.
+            
+            .. image:: images/122848028/122815374.png
 
             .. rubric:: Adding EDN by IDEX
                :name: WalletSequenceDiagram-AddingEDNbyIDEX
 
             ETH to EDN is also possible through IDEX.
+
+            .. image:: images/122848028/122946600.png
 
             .. rubric:: EDN Transfer
                :name: WalletSequenceDiagram-EDNTransfer
@@ -100,75 +114,12 @@ Wallet Sequence Diagram
             At this moment, EDN is ERC20 token so EDN transfer needs to
             access Ethereum. The sequence digram explains this process.
 
-            | 
+            .. image:: images/122848028/122815379.png
 
             | 
 
             | 
 
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
-
-            | 
 
             | 
 
@@ -183,31 +134,31 @@ Wallet Sequence Diagram
             .. container:: greybox
 
                |image0|
-               `image2019-3-25_12-58-18.png <attachments/122848028/122880821.png>`__
+               `image2019-3-25_12-58-18.png <images/122848028/122880821.png>`__
                (image/png)
                |image1|
-               `image2019-3-25_12-59-2.png <attachments/122848028/122815353.png>`__
+               `image2019-3-25_12-59-2.png <images/122848028/122815353.png>`__
                (image/png)
                |image2|
-               `image2019-3-25_13-2-17.png <attachments/122848028/122848038.png>`__
+               ``__
                (image/png)
                |image3|
-               `image2019-3-25_15-42-17.png <attachments/122848028/122815366.png>`__
+               `image2019-3-25_15-42-17.png <images/122848028/122815366.png>`__
                (image/png)
                |image4|
-               `image2019-3-25_15-43-24.png <attachments/122848028/123371526.png>`__
+               `image2019-3-25_15-43-24.png <images/122848028/123371526.png>`__
                (image/png)
                |image5|
-               `image2019-3-25_15-44-10.png <attachments/122848028/122946595.png>`__
+               `image2019-3-25_15-44-10.png <images/122848028/122946595.png>`__
                (image/png)
                |image6|
-               `image2019-3-25_15-51-2.png <attachments/122848028/122815374.png>`__
+               `image2019-3-25_15-51-2.png <images/122848028/122815374.png>`__
                (image/png)
                |image7|
-               `image2019-3-25_15-52-4.png <attachments/122848028/122946600.png>`__
+               `image2019-3-25_15-52-4.png <images/122848028/122946600.png>`__
                (image/png)
                |image8|
-               `image2019-3-25_15-52-37.png <attachments/122848028/122815379.png>`__
+               `image2019-3-25_15-52-37.png <images/122848028/122815379.png>`__
                (image/png)
 
    .. container::

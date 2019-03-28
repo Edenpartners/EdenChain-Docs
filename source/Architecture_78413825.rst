@@ -54,6 +54,7 @@ that implements can encryption technique called Elliptic
 Curve Cryptography –Threshold Cryptography (ECC-TC) is used
 for reliable communication between these nodes.
 
+.. image:: images/78413825/120783173.png
 
 Distributed Ledger Layer
 ==========================
@@ -136,14 +137,12 @@ Since the on-chain and off-chain modules are located in
 different networks, they configure a network on which they
 can securely communicate and exchange data.
 
-| 
 
 Service Architecture
 =====================
 
-| 
+.. image:: images/78413825/121045170.png
 
-| 
 
 The above diagram shows service architecture of Edenchain
 from end to end.
@@ -209,6 +208,14 @@ through the super blocks.
 The below image explains dApp, super node and hyper node
 relationship.
 
+.. image:: images/78413825/122815262.png
+
+.
+
+
+
+
+
 
 
          .. container:: pageSection group
@@ -222,16 +229,16 @@ relationship.
             .. container:: greybox
 
                |image0|
-               `image2019-3-16_14-22-34.png <attachments/78413825/120783173.png>`__
+               `image2019-3-16_14-22-34.png <images/78413825/120783173.png>`__
                (image/png)
                |image1|
-               `image2019-3-16_14-38-19.png <attachments/78413825/120979691.png>`__
+               `image2019-3-16_14-38-19.png <images/78413825/120979691.png>`__
                (image/png)
                |image2|
-               `image2019-3-16_14-41-28.png <attachments/78413825/121045170.png>`__
+               `image2019-3-16_14-41-28.png <images/78413825/121045170.png>`__
                (image/png)
                |image3|
-               `image2019-3-25_12-24-9.png <attachments/78413825/122815262.png>`__
+               `image2019-3-25_12-24-9.png <images/78413825/122815262.png>`__
                (image/png)
 
    .. container::

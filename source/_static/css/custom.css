@@ -226,3 +226,8 @@ a:visited {
 .pagesection.group.container {
     display: none;
 }
+
+.pagesectionheader.container {
+    display: none;
+}
+

@@ -39,6 +39,8 @@ Core Components
             The below image tells core components, relationship and how
             it is deployed.
 
+            .. image:: images/11436081/122782531.png
+
             Edenchain is a cloud based blockchain platform, as you can
             see heavy usage of kubernates, hyper node, super node and
             eden core are running on top of kubernates.

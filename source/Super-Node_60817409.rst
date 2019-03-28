@@ -50,7 +50,7 @@ Super Node
             So super node has its own consensus algorithm and data
             storage.  The below image shows architecture of super node.
 
-            | 
+            .. image:: images/60817409/121405502.png
 
             | 
 
@@ -91,7 +91,7 @@ Super Node
             .. container:: greybox
 
                |image0|
-               `image2019-3-19_10-23-39.png <attachments/60817409/121405502.png>`__
+               `image2019-3-19_10-23-39.png <images/60817409/121405502.png>`__
                (image/png)
 
    .. container::

@@ -59,6 +59,8 @@ Transaction Processor
             consolidation of the TP is a software module implemented
             using the Edenchain API.
 
+            .. image:: images/120783203/120881553.png            
+
             .. rubric:: TP Handling
                :name: TransactionProcessor-TPHandling
 
@@ -74,6 +76,8 @@ Transaction Processor
             Because blocking is maintained until the start and end of a
             TP, TP should be developed to handle the process in as short
             a time as possible.
+
+            .. image:: images/120783203/120881557.png
 
             Especially, in the case of a TP that changes state, other
             work should not be performed concurrently. Therefore, the
@@ -143,10 +147,10 @@ Transaction Processor
             .. container:: greybox
 
                |image0|
-               `image2018-10-31_11-42-54.png <attachments/120783203/120881553.png>`__
+               `image2018-10-31_11-42-54.png <image/120783203/120881553.png>`__
                (image/png)
                |image1|
-               `image2018-10-31_11-44-10.png <attachments/120783203/120881557.png>`__
+               `image2018-10-31_11-44-10.png <image/120783203/120881557.png>`__
                (image/png)
 
    .. container::

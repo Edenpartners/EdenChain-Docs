@@ -218,7 +218,7 @@ Build E-Wallet 
             | ● FirebasePerformance.framework
             | ● FirebaseRemoteConfig.framework
 
-            | 
+            .. image:: images/122782513/123338815.png
 
             .. rubric:: Universal link Configuration
                :name: BuildE-Wallet-UniversallinkConfiguration
@@ -232,7 +232,7 @@ Build E-Wallet 
             -  After clicking the‘+’ button, type
                ‘applinks:\ `ewallet.edenchain.io <http://ewallet.edenchain.io>`__ 
 
-            | 
+            .. image:: images/122782513/122782520.png
 
          .. container:: pageSection group
 
@@ -245,10 +245,10 @@ Build E-Wallet 
             .. container:: greybox
 
                |image0|
-               `image2019-3-25_12-34-7.png <attachments/122782513/123338815.png>`__
+               `image2019-3-25_12-34-7.png <images/122782513/123338815.png>`__
                (image/png)
                |image1|
-               `image2019-3-25_12-34-43.png <attachments/122782513/122782520.png>`__
+               `image2019-3-25_12-34-43.png <images/122782513/122782520.png>`__
                (image/png)
 
    .. container::
