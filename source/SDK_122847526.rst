@@ -143,7 +143,7 @@ SDK
 
             We are providing this function first and add more functions
             according to the Candidate Release.
-
+|image2019-3-25_16-56-24.png|
              
 
          .. container:: pageSection group
@@ -157,8 +157,7 @@ SDK
             .. container:: greybox
 
                
-               .. |image2019-3-25_16-56-24.png| image:: images/122847526/122945923.png
-
+               
                |image1|
                `image2019-3-25_16-56-24.png <images/122847526/122815444.png>`__
                (image/png)
@@ -182,3 +181,4 @@ SDK
    :width: 8px
    :height: 8px
 
+.. |image2019-3-25_16-56-24.png| image:: images/122847526/122945923.png

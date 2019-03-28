@@ -167,6 +167,8 @@ environment. So scalability design principle forces to have
 a design which allows workload distribution by algorithm,
 data structure and so on.
 
+.. image:: images/120161393/121045240.png
+
 Accessibility
 -----------------
 
@@ -217,9 +219,7 @@ a number of Internet companies such as the Apache
 Foundation, Netflix, CloudFoundry, and Attlasian, and is
 also recommended by Microsoft Azure.
 
-| 
-
-| 
+.. image:: images/120161393/120979718.png
 
 *The above image shows a configuration of an operating
 environment of Eden to which a multi data center pattern and
@@ -292,9 +292,7 @@ follows an exponential distribution as a random number and
 selects the node that has the smallest wait time as the
 leader.
 
-| 
-
-| 
+.. image:: images/120161393/120979713.png
 
 PoET is designed to follow the Poisson distribution, which
 is a form of discrete probability distribution that follows
@@ -322,9 +320,7 @@ within a block and a batch to verify the transaction.
 
 Node Address = Namespace + Node Path
 
-| 
-
-| 
+.. image:: images/120161393/120979726.png
 
 A namespace is a form of identification value for
 ascertaining the type of transaction and all transactions in
@@ -342,6 +338,8 @@ executed in parallel. As a result, it is no longer necessary
 to execute one transaction at a time due to data consistency
 issues as is the case for many existing solutions in the
 blockchain space.
+
+.. image:: images/120161393/121045210.png
 
 REST API
 ==========
