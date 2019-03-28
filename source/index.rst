@@ -22,14 +22,14 @@ Edenchain Intro Video
 -----------------------
 .. raw:: html
 
-    <video controls src="https://edenchain.io/wp-content/uploads/2019/03/CNBC.mp4" width="700">
+    <video controls src="https://edenchain.io/wp-content/uploads/2019/03/CNBC.mp4" width="100%">
     </video>
 
 Table of Contents
 =====================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    edenchain_introduction.rst
    architecture.rst
