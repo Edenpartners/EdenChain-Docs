@@ -222,3 +222,7 @@ a:visited {
 #urlschemeuniversallink-defineurlschemeanduniversallink {
     display: none;
 }
+
+.pagesection.group.container {
+    display: none;
+}
