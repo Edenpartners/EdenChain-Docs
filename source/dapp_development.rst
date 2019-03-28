@@ -9,7 +9,7 @@ dApp Development
     :maxdepth: 2
 
     Internal_Communication_105316544.rst
-    urlscheme_80576581.rst
+    Urlscheme-and-Universal-Link-definition_80576581.rst
     Public-Interface-API-Specification_55509016.rst
     EIAM-Server_11436141.rst
     Data-Models_14254471.rst
