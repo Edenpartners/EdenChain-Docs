@@ -1,8 +1,8 @@
 .. image:: images/EdenChain_Introduction/Permissioned_Blockchain.png
     :width: 750px
 
-.. rubric:: Permissioned Blockchain
-    :name: EdenChainIntroduction-PermissionedBlockchain
+Permissioned Blockchain
+========================
 
 A permissioned blockchain has evolved as an alternative to
 permissionless blockchain technology, which allows anyone to

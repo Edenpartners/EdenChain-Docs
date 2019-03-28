@@ -1,8 +1,9 @@
 .. image:: images/EdenChain_Introduction/Namespace.png
     :width: 750px
 
-.. rubric:: Namespace
-    :name: EdenChainIntroduction-Namespace
+Namespace
+===============
+
 
 Eden uses a Radix Merkle Tree to store a current state of
 the blockchain. Validator nodes that check conformity of

@@ -12,6 +12,6 @@ EdenChain Introduction
    design_principle.rst
    consensus_algorithm.rst
    namespace.rst
-   Transaction_processor_120783203.rst
+   Transaction-Processor_120783203.rst
    rest_api.rst
 
