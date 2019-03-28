@@ -27,20 +27,13 @@ Data Models
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified by Hailee Kim on Mar 27,
-            2019
+            Created by Jacki Heo, last modified on Mar 28, 2019
 
          .. container:: wiki-content group
             :name: main-content
 
-            .. rubric:: Jira Link
-               :name: DataModels-JiraLink
-
-            .. rubric:: `|image0|\ EW-65 <https://edenchain.atlassian.net/browse/EW-65>`__\ -
-               Data Models Specification Done
-               :name: DataModels-SystemJIRAkey,summary,type,created,updated,due,assignee,reporter,priority,status,resolutiond606b66f-45a3-32f1-8426-452683fe0d6eEW-65
-
-            Overview
+            .. rubric:: Overview
+               :name: DataModels-Overview
 
             Communication between internal core components is done in a
             Restful form, and the content-type is application /
@@ -53,8 +46,6 @@ Data Models
 
             Since the Protocol Buffers Message to be communicated should
             be the same, the related part is defined here.
-
-            | 
 
             | 
 
@@ -74,39 +65,23 @@ Data Models
 
             | 
 
-            .. container:: table-wrap
+            ::
 
-               ==========================
                message TransactionBody  {
-               
-               | 
-               
-               enum TXMessageType{
-               
-               TRANSACTION_DEPOSIT = 0;
-               
-               TRANSACTION_WITHDRAW = 1;
-               
-               TRANSACTION_TRANSFER = 2;
-               
-               }
-               
-               | 
-               
-               TXMessageType tx_type = 1;
-               
-               string to_addr = 2;
-               
-               string from_addr  = 3;
-               
-               string amount=4;
-               
-               string dapp_name = 5;
-               
-               string transfer_type = 6;
-               
+                  enum TXMessageType{
+                   TRANSACTION_DEPOSIT = 0;
+                   TRANSACTION_WITHDRAW = 1;
+                   TRANSACTION_TRANSFER = 2;
+                  }
+
+                  TXMessageType tx_type = 1;
+                  string to_addr = 2;
+                  string from_addr  = 3;
+                  string amount=4;
+                  string dapp_name = 5;
+                  string transfer_type = 6;
+
                }​
-               ==========================
 
             -  Explanation
 
@@ -163,19 +138,17 @@ Data Models
 
             | 
 
-            .. container:: table-wrap
+            ::
 
-               ================================
                message Transaction {
-               
-               string version = 1;
-               
-               TransactionBody transaction = 2;
-               
-               string from_sign_hashed = 10;
-               
+                  string version = 1;
+                  TransactionBody transaction = 2;
+                  string from_sign_hashed = 10;
                }​
-               ================================
+
+            | 
+
+            | 
 
             -  Explanation
 
@@ -197,15 +170,13 @@ Data Models
 
             | 
 
-            .. container:: table-wrap
+            ::
 
-               ========================
                message BalanceRequest {
-               
-               string addr = 1;
-               
+                  string addr = 1;
                }​
-               ========================
+
+            | 
 
             -  Explanation
 
@@ -226,17 +197,16 @@ Data Models
             This is the response to the TEDN user's BalanceRequest.
             Returns the current balance value of the TEDN user.
 
-            .. container:: table-wrap
+            | 
 
-               =========================
+            ::
+
                message BalanceResponse {
-               
-               string addr = 1;
-               
-               string amount = 2;
-               
+                  string addr = 1;
+                  string amount = 2;
                }​
-               =========================
+
+            | 
 
             -  Explanation
 
@@ -256,17 +226,14 @@ Data Models
             The value for the balance of from_addr and to_addr when
             TRANSACTION completes normally.
 
-            .. container:: table-wrap
+            ::
 
-               ====================================
                message BalanceResponseList{
-               
-               repeated BalanceResponse response=1;
-               
-               string txkey=2;
-               
-               }​
-               ====================================
+                   repeated BalanceResponse response=1;
+                   string txkey=2;
+               }
+
+            | 
 
             -  Explanation
 
@@ -292,15 +259,11 @@ Data Models
             transaction. The user is identified by the IAM Token, which
             is in the HTTP Header.
 
-            .. container:: table-wrap
+            ::
 
-               ========================
                message TransactionHash{
-               
-               string txhash=1;
-               
+                  string txhash=1;
                }​
-               ========================
 
             -  Explanation
 
@@ -320,17 +283,16 @@ Data Models
             The user is identified by the IAM Token, which is in the
             HTTP Header.
 
-            .. container:: table-wrap
+            | 
 
-               ========================
+            ::
+
                message WithdrawRequest{
-               
-               string eth_address=1;
-               
-               string tedn_amount=2;
-               
+                  string eth_address=1;
+                  string tedn_amount=2;
                }
-               ========================
+
+            | 
 
             -  Explanation
 
@@ -348,15 +310,15 @@ Data Models
             This is the message returned when the E-Wallet requests
             CoinServer's HDAddress with CoinServer.
 
-            .. container:: table-wrap
+            | 
 
-               ====================
+            ::
+
                message HDAddress{
-               
-               string hd_address=1;
-               
-               }​
-               ====================
+                  string hd_address=1;
+               }
+
+            | 
 
             -  Explanation
 
@@ -373,17 +335,16 @@ Data Models
             It is a message used by E-Wallet to request the transaction
             of the current user to TransactionServer.
 
-            .. container:: table-wrap
+            | 
 
-               ================================
+            ::
+
                ​message TransactionListRequest{
-               
-               int32 page = 1;
-               
-               int32 countperpage = 2;
-               
+                  int32 page = 1;
+                  int32 countperpage = 2;
                }
-               ================================
+
+            | 
 
             -  Explanation
 
@@ -403,21 +364,18 @@ Data Models
             reads the db value generated by the block commit of the
             supernode.
 
-            .. container:: table-wrap
+            | 
 
-               ===========================
+            ::
+
                message TransactionReceipt{
-               
-               string to_addr = 1;
-               
-               string from_addr  = 2;
-               
-               string amount=3;
-               
-               Timestamp regdate=4;
-               
+                  string to_addr = 1;
+                  string from_addr  = 2;
+                  string amount=3;
+                  Timestamp regdate=4;
                }​
-               ===========================
+
+            | 
 
             -  Explanation
 
@@ -439,19 +397,13 @@ Data Models
             internal TransctionBody is always defined as
             RANSACTION_TRANSFER.
 
-            .. container:: table-wrap
+            ::
 
-               ===========================================
-               ​message TransactionListResponse{
-               
-               int32 totalcount=1;
-               
-               int32 currentpage=2;
-               
-               repeated TransactionReceipt transactions=3;
-               
+               message TransactionListResponse{
+                  int32 totalcount=1;
+                  int32 currentpage=2;
+                  repeated TransactionReceipt transactions=3;
                }
-               ===========================================
 
             -  Explanation
 
@@ -474,19 +426,15 @@ Data Models
             until signing, the TS forwards the data to the SuperNode as
             a proxy.
 
-            .. container:: table-wrap
+            ::
 
-               ===========================
-               ​message TransactionStream{
-               
-               int32 version=1;
-               
-               string data=2;
-               
-               Transaction tx=3;
-               
+               message TransactionStream{
+                  int32 version=1;
+                  string data=2;
+                  Transaction tx=3;
                }
-               ===========================
+
+            | 
 
             -  Explanation
 
@@ -511,15 +459,13 @@ Data Models
             Coinserver. This information is sent from the BS in the
             BalanceListResponse.
 
-            .. container:: table-wrap
+            ::
 
-               =================================
-               ​message BalanceRollbackRequest {
-               
-               string txkey = 1; 
-               
+               message BalanceRollbackRequest {
+                  string txkey = 1; 
                }
-               =================================
+
+            | 
 
             -  Explanation
 
@@ -533,512 +479,15 @@ Data Models
                |            | ing |                                                   |
                +------------+-----+---------------------------------------------------+
 
-            --------------
-
-            --------------
-
-            | 
-
-            Overview
-
-            내부 core component들 간의 통신은 Restful 형태로 통신을 하고
-            있으며 Content-Type은 application/x-protobuf 이다.
-
-            즉, Protocol Buffers로 통신을 하도록 한다.  내부 통신에 대한
-            정의이므로 이 부분은 개발사나 사용자 측에서  값을 보거나
-            호출할 일은 없다. 
-
-            이때 통신하는 Protocol Buffers Message는 동일해야 하므로
-            관련 부분을 정의한다. 
-
-            | 
-
-            | 
-
-            .. rubric:: Messages
-               :name: DataModels-Messages.1
-
-            syntax는 proto3를 사용한다.
-
-            package는 edenchain으로 정의한다.
-
-            | 
-
-            1. TransactionBody
-
-            TEDN에 대한 모든 Transaction이 처리될 때 사용되는
-            메세지이다.
-
-            .. container:: table-wrap
-
-               ==========================
-               message TransactionBody  {
-               
-               | 
-               
-               enum TXMessageType{
-               
-               TRANSACTION_DEPOSIT = 0;
-               
-               TRANSACTION_WITHDRAW = 1;
-               
-               TRANSACTION_TRANSFER = 2;
-               
-               }
-               
-               | 
-               
-               TXMessageType tx_type = 1;
-               
-               string to_addr = 2;
-               
-               string from_addr  = 3;
-               
-               string amount=4;
-               
-               string dapp_name = 5;
-               
-               string transfer_type = 6;
-               
-               }​
-               ==========================
-
-            -  설명
-
-                      enum TXMessageType
-
-            Transaction에 필요한 메세지 종류 를 정리한다.
-
-            .. container:: table-wrap
-
-               ==================== =====================================================
-               Enum 이름            설명
-               ==================== =====================================================
-               ​TRANSACTION_DEPOSIT ​CS→BS로 EDN을 TEDN으로 바꿀 경우
-               TRANSACTION_WITHDRAW CS→BS로 TEDN을 EDN으로 바꿀 경우
-               TRANSACTION_TRANSFER dAppServer→BS 로 TEDN을 betting하거나 payout하는 경우
-               ==================== =====================================================
-
-                    
-
-            .. container:: table-wrap
-
-               ============= =============== =============================================================================
-               Field 이름    Type            설명
-               ============= =============== =============================================================================
-               tx_type       TXMessageType ​ transaction operation이다.
-                                            
-                                             정의된 enum중
-                                            
-                                             TRANSACTION_DEPOSIT/
-                                            
-                                             TRANSACTION_WITHDRAW/
-                                            
-                                             TRANSACTION_TRANSFER
-                                            
-                                              가  쓰인다.
-               to_addr       string          TEDN base58 encoded public key
-               from_addr     string          TEDN base58 encoded public key
-               amount        string          decimal(18) 인 token이다. 내부적으로 처리할 때에는 bignum으로 변환한다. 
-                                            
-                                             protocol buffer에서는 64가 최대크기이므로 string으로 변환하여 처리한다.
-               dapp_name     string          DAPP 이름이다.
-               transfer_type string          payout인지, betting, 또는 이후 있을 dapp과 사용자간 transfer type을 의미한다.
-                                            
-                                             pr은 payout rollback, br은 betting rollback을 의미한다.
-               ============= =============== =============================================================================
-
-            | 
-
-            2. Transaction
-
-            Transaction을 주고 받을 때 사용하는 메세지이며,   버전
-            정보와 TransactionBody에 대한 sign된 값을 가지고 있다.
-
-            | 
-
-            .. container:: table-wrap
-
-               ================================
-               message Transaction {
-               
-               string version = 1;
-               
-               TransactionBody transaction = 2;
-               
-               string from_sign_hashed = 10;
-               
-               }​
-               ================================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ================ =========== ===============================================================================================================================
-               Field 이름       Type        설명
-               ================ =========== ===============================================================================================================================
-               ​version         string​     "1.0"​으로 설정하며, 추후 transaction자체가 변경되는 경우 변경 가능하다.
-               transaction      Transaction TEDN 처리에 대한 TransactionBody이다.
-               from_sign_hashed string      TransactionBody의 from_addr의 private key로 전달된 transaction을 SerializeToString후 signing한 값을 base58로 encoding한 값이다.
-               ================ =========== ===============================================================================================================================
-
-            | 
-
-            3. BalanceRequest
-
-            TEDN사용자의 Balance를 얻을 때 사용한다.
-
-            | 
-
-            .. container:: table-wrap
-
-               ========================
-               message BalanceRequest {
-               
-               string addr = 1;
-               
-               }​
-               ========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ========== ======== =========================================================
-               Field 이름 Type     설명
-               ========== ======== =========================================================
-               ​addr      string ​ Balance를 가진 TEDN사용자의 base58 encoding된 public key​
-               ========== ======== =========================================================
-
-            | 
-
-            | 
-
-            4. BalanceResponse
-
-            TEDN 사용자의 BalanceRequest에 대한 응답이다. TEDN사용자의
-            현재 balance값을 return한다.
-
-            .. container:: table-wrap
-
-               =========================
-               message BalanceResponse {
-               
-               string addr = 1;
-               
-               string amount = 2;
-               
-               }​
-               =========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ========= ======= ========================================================================
-               Field이름 Type    설명
-               ========= ======= ========================================================================
-               ​addr     string​ ​addrstring ​Balance를 가진 TEDN사용자의 base58 encoding된 public key​​
-               amount    string  decimal(18) 인 token이다. 내부적으로 처리할 때에는 bignum으로 변환한다. 
-                                
-                                 protocol buffer에서는 64가 최대크기이므로 string으로 변환하여 처리한다.
-               ========= ======= ========================================================================
-
-            5. BalanceResponseList
-
-            TRANSACTION이 정상적으로 완료되는 경우 from_addr과 to_addr의
-            잔액에 대한 값이다.
-
-            .. container:: table-wrap
-
-               ====================================
-               message BalanceResponseList{
-               
-               repeated BalanceResponse response=1;
-               
-               string txkey=2;
-               
-               }​
-               ====================================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ========== ================= =================================================================================================================
-               Field 이름 Type              설명
-               ========== ================= =================================================================================================================
-               ​response  BalanceResponse ​ repeated type이며, 처음 element는 from_addr의 잔액, 다음 element는 to_addr의 잔액이다.​
-               txkey      string            추후 BS에서 rollback을 위해 사용되는 txkey. cs에서 ethereum의 tx를 체크하고 해당 tx값이 rollback되었을 때 bs에서 
-                                           
-                                            처리된 값도 rollback되어야 한다. 한데, cs는 사용자가 아니므로 token값이 없으므로 해당 txkey를 return하면
-                                           
-                                            rollback할 때 해당 txkey를 http header에 실어서 보내면 token이 없어도 해당 값을 수행한다.
-                                           
-                                            단, 이경우는 단순 rollback만 수행하게 된다.
-                                           
-                                            만약 bs가 아닌 다른 서버가 해당 tx를 받았을 경우는 그냥 ''가 리턴된다.
-               ========== ================= =================================================================================================================
-
-            6. TransactionHash
-
-            Transaction을 찾기 위한 Hash값이며, 보통 E-Wallet에서 EDN을
-            Deposit을 하였을 경우 해당 Transaction에 대한 hash값을
-            보낸다.
-
-            사용자는 IAM Token으로 구분하는데, 이값은 HTTP Header에
-            들어있다.
-
-            .. container:: table-wrap
-
-               ========================
-               message TransactionHash{
-               
-               string txhash=1;
-               
-               }​
-               ========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ========== ======= =============================================================================================================================
-               Field 이름 Type    설명
-               ========== ======= =============================================================================================================================
-               ​txhash    string​ E-Wallet에서 Ethereum network으로 transfer를 하면 해당 transaction에 대한 hash가 나오는데 해당 값을 가지고 추후 Transaction이
-                                 
-                                  성공했는지 실패했는지 확인이 가능하다.​
-               ========== ======= =============================================================================================================================
-
-            7. WithdrawRequest
-
-            E-Wallet에서 CS에게 TEDN을 차감하고 EDN을 늘려달라는 요청을
-            할 때 쓰인다.
-
-            사용자는 IAM Token으로 구분하는데, 이값은 HTTP Header에
-            들어있다.
-
-            .. container:: table-wrap
-
-               ========================
-               message WithdrawRequest{
-               
-               string eth_address=1;
-               
-               string tedn_amount=2;
-               
-               }
-               ========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ============ ======= ===============================================================================
-               Field 이름   Type    설명
-               ============ ======= ===============================================================================
-               ​eth_address string​ ethereum address​, EDN을 받을 주소를 의미한다.
-               tedn_amount  string  차감할 TEDN값이며, 이값은 1:1로 EDN으로 변환되어 지정한 eth_address로 전달된다.
-               ============ ======= ===============================================================================
-
-            8. HDAddress
-
-            E-Wallet이 CoinServer로 CoinServer의 HDAddress를 요청하였을
-            경우 리턴되는 메세지이다.
-
-            .. container:: table-wrap
-
-               ====================
-               message HDAddress{
-               
-               string hd_address=1;
-               
-               }​
-               ====================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               =========== ======= ==================================================================
-               Field 이름  Type    설명
-               =========== ======= ==================================================================
-               ​hd_address string​ Coin Server의 HD Address로, E-Wallet이 EDN을 줄 떄 받는 주소이다.​
-               =========== ======= ==================================================================
-
-            9. TransactionListRequest
-
-            E-Wallet이 TransactionServer로 현재 사용자의 Transaction을
-            요청할 때 쓰이는 메세지이다.
-
-            .. container:: table-wrap
-
-               ================================
-               ​message TransactionListRequest{
-               
-               int32 page = 1;
-               
-               int32 countperpage = 2;
-               
-               }
-               ================================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ============ ====== ========================================================================================
-               Field 이름   Type   설명
-               ============ ====== ========================================================================================
-               ​page        int​32 transaction리스트를 E-Wallet이나 기타 서버에서 요청할 때 어느 page를 리턴할지 요청한다.​
-               countperpage int32  1page당 표시될 row count이다.
-               ============ ====== ========================================================================================
-
-            10. TransactionReceipt 
-
-            TransactionReceipt는 실제 Transaction외에도 생성 날짜등의
-            부가 정보를 가지고 있으며, supernode의 block commit에 의해
-            생성된 db값을 읽어 들인다.
-
-            .. container:: table-wrap
-
-               ===========================
-               message TransactionReceipt{
-               
-               string to_addr = 1;
-               
-               string from_addr  = 2;
-               
-               string amount=3;
-               
-               Timestamp regdate=4;
-               
-               }​
-               ===========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ========== ========= ================================
-               Field 이름 Type      설명
-               ========== ========= ================================
-               ​to_addr   string​   TEDN을 받은 주소​
-               from_addr  string    TEDN을 전달한 주소
-               amount     string    decimal 18인 전달된 TEDN 값이다.
-               regdate    Timestamp TEDN이 전달된 시간이다.
-               ========== ========= ================================
-
-            11. TransactionListResponse
-
-            TransactionListRequest로 요청된 현재 사용자의 Transaction에
-            대한 응답이다. 내부 TransctionBody의 Type은
-            언제나 RANSACTION_TRANSFER로 정의된다.
-
-            .. container:: table-wrap
-
-               ===========================================
-               ​message TransactionListResponse{
-               
-               int32 totalcount=1;
-               
-               int32 currentpage=2;
-               
-               repeated TransactionReceipt transactions=3;
-               
-               }
-               ===========================================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               ============ ================== ==============================================================
-               Field 이름   Type               설명
-               ============ ================== ==============================================================
-               ​totalcount  int32​             전체 tranction count​
-               currentpage  int32              transaction request에서 요청된 page이며, 현재 요청된 page이다.
-               transactions TransactionReceipt TransactionReceipt의 array이며, transaction내용을 가지고 있다.
-               ============ ================== ==============================================================
-
-            12. TransactionStream
-
-            DApp서버 등에서 Binary Transaction을 TS로 보낼때 쓴다. 
-
-            해당 데이타는 내부적으로는 Signing까지 완료된 데이타 이므로
-            TS에서는 proxy처럼 해당 데이타를 SuperNode에 포워딩한다.
-
-            .. container:: table-wrap
-
-               ===========================
-               ​message TransactionStream{
-               
-               int32 version=1;
-               
-               string data=2;
-               
-               Transaction tx=3;
-               
-               }
-               ===========================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               +------------+-----+---------------------------------------------------+
-               | Field 이름 | Typ | 설명                                              |
-               |            | e   |                                                   |
-               +============+=====+===================================================+
-               | ​version   | int | data ​version으로, 버전에 따라 data의 형태가      |
-               |            | 32​ | 달라질 수 있다. 현재 값은 1이다.                  |
-               +------------+-----+---------------------------------------------------+
-               | data       | str | version 1인 경우 json string이다.                 |
-               |            | ing |                                                   |
-               +------------+-----+---------------------------------------------------+
-
-            13. BalanceRollbackRequest
-
-            Coinserver에서 ethereum transaction을 수행 후 ethereum tx가
-            실패하여 관련 tx를 rollback하고 싶을 때 사용한다. 해당
-            정보는 BalanceListResponse에서 BS에서 보내는 정보이다.
-
-            .. container:: table-wrap
-
-               =================================
-               ​message BalanceRollbackRequest {
-               
-               string txkey = 1; 
-               
-               }
-               =================================
-
-            -  설명
-
-            .. container:: table-wrap
-
-               +------------+-----+---------------------------------------------------+
-               | Field 이름 | Typ | 설명                                              |
-               |            | e   |                                                   |
-               +============+=====+===================================================+
-               | ​txkey     | str | BS가 보낸 txkey이다. 이는, txhash가 아니다.       |
-               |            | ing |                                                   |
-               +------------+-----+---------------------------------------------------+
-
    .. container::
       :name: footer
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 27, 2019 18:40
+         Document generated by Confluence on Mar 28, 2019 12:30
 
          .. container::
             :name: footer-logo
 
             `Atlassian <http://www.atlassian.com/>`__
-
-.. |image0| image:: https://edenchain.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype
-   :class: icon
 

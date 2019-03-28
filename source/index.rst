@@ -16,7 +16,7 @@ Edenchain is a blockchain technology designed specifically with enterprises in m
    :maxdepth: 2
    
    edenchain_introduction.rst
-   architecture.rst
+   Architecture.rst
    wallet.rst
    dapp_development.rst
    sdk.rst
