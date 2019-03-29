@@ -29,7 +29,8 @@ Install SDK & Development for Python
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified on Mar 28, 2019
+            Created by Jacki Heo, last modified by Jay Lee on Mar 29,
+            2019
 
          .. container:: wiki-content group
             :name: main-content
@@ -52,7 +53,7 @@ Install SDK & Development for Python
 
             ::
 
-               pip install  edenchain-client-sdk
+               pip install  EdenChain-client-sdk
 
             | 
             | If there is no error, installation to the relevant library
@@ -69,7 +70,7 @@ Install SDK & Development for Python
             -  .. rubric:: Network Settings
                   :name: InstallSDK&DevelopmentforPython-NetworkSettings
 
-            Set up the network of the Edenchain to connect through the
+            Set up the network of the EdenChain to connect through the
             SDK. There are currently three networks, and you have to set
             up a network to test, which is always the first thing you
             need to initialize when using the SDK.
@@ -81,9 +82,9 @@ Install SDK & Development for Python
 
             ::
 
-               EDENCHAIN_MAINNET_NETWORK      : EdenChain MainNet General Release 
-               EDENCHAIN_CANDIDATE_RELEASE    : EdenChain Candidate Release
-               EDENCHAIN_BETA_RELEASE         : EdenChain Beta Release
+               EdenChain_MAINNET_NETWORK      : EdenChain MainNet General Release 
+               EdenChain_CANDIDATE_RELEASE    : EdenChain Candidate Release
+               EdenChain_BETA_RELEASE         : EdenChain Beta Release
 
             | 
 
@@ -108,7 +109,7 @@ Install SDK & Development for Python
             -  .. rubric:: Authentication
                   :name: InstallSDK&DevelopmentforPython-Authentication
 
-            Only sign in to Edenchain is supported. Sign In provides
+            Only sign in to EdenChain is supported. Sign In provides
             sign-in to the pre-created account.
 
             | 
@@ -135,7 +136,7 @@ Install SDK & Development for Python
 
                get_user_info(token='')
 
-            Returns user information in the Edenchain. Returns the
+            Returns user information in the EdenChain. Returns the
             dictionary type, token address or token deposit, and
             Ethereum address information to be used for withdrawing.
 
@@ -193,8 +194,8 @@ Install SDK & Development for Python
 
                return:
                            [{}]                  :   Returns a list of objects, each of which has the following information in dictionary form.
-                                                  from_addr  (String):  The address on Edenchain where the amount is withdrawn.
-                                                  to_addr       (String) : The address on the Edenchain where the amount is deposited.
+                                                  from_addr  (String):  The address on EdenChain where the amount is withdrawn.
+                                                  to_addr       (String) : The address on the EdenChain where the amount is deposited.
                                                   amount     (int )       :  token amount corresponding to tx, and it is decimal 18.
                                                   regdate    (int)         : The time at which tx was performed, in seconds.
 
@@ -270,7 +271,7 @@ Install SDK & Development for Python
                deposit_token(token='', txhash='')
 
             It is the API that is called when the Ethereum ERC20 EDN
-            Token is passed for the Edenchain service.
+            Token is passed for the EdenChain service.
 
             | 
 
@@ -314,7 +315,7 @@ Install SDK & Development for Python
 
                get_user_info_async(token='')
 
-            And returns user information on the Edenchain. Returns the
+            And returns user information on the EdenChain. Returns the
             dictionary type, token address or token deposit, and
             Ethereum address information to be used for withdrawing.
 
@@ -332,7 +333,7 @@ Install SDK & Development for Python
                                                   eth_address (String ) : It is the ethereum address of the user added / deleted by api, and may contain multiple addresses as delimiter with '|'.
 
                                                                           withdraw or deposit of api will refuse to withdraw or deposit to unregistered address.
-                                                  tedn_public_key (String )  Edenchain user wallet address
+                                                  tedn_public_key (String )  EdenChain user wallet address
 
             | 
 
@@ -340,7 +341,7 @@ Install SDK & Development for Python
 
                get_user_balance_async(token='')
 
-            Returns the user account Balance on Edenchain.
+            Returns the user account Balance on EdenChain.
 
             | 
 
@@ -372,8 +373,8 @@ Install SDK & Development for Python
 
                return:
                            [{}]                  :   Returns a list of objects, each of which has the following information in dictionary form.
-                                                  from_addr  (String):  The address on the Edenchain where the amount is withdrawn.
-                                                  to_addr       (String) : The address on the Edenchain where the amount is deposited.
+                                                  from_addr  (String):  The address on the EdenChain where the amount is withdrawn.
+                                                  to_addr       (String) : The address on the EdenChain where the amount is deposited.
                                                   amount     (int )       :  token amount corresponding to tx, and it is decimal 18.
                                                   regdate    (int)         : The time at which tx was performed, in seconds.
 
@@ -492,10 +493,12 @@ Install SDK & Development for Python
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 28, 2019 14:29
+         Document generated by Confluence on Mar 29, 2019 14:48
 
          .. container::
             :name: footer-logo
 
             `Atlassian <http://www.atlassian.com/>`__
+
+
 

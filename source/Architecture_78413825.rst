@@ -1,5 +1,3 @@
-
-
 .. container::
    :name: page
 
@@ -24,15 +22,14 @@
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified by James Ahn on Mar 25,
+            Created by Jacki Heo, last modified by Jay Lee on Mar 29,
             2019
 
          .. container:: wiki-content group
             :name: main-content
 
-
 Overview
-===========
+==========
 
 Eden is a permissioned blockchain consisting of three
 layers: a distributed ledger layer, a validation layer, and
@@ -54,7 +51,13 @@ that implements can encryption technique called Elliptic
 Curve Cryptography –Threshold Cryptography (ECC-TC) is used
 for reliable communication between these nodes.
 
-.. image:: images/78413825/120783173.png
+| 
+
+EdenChain Architecture
+
+|image2019-3-16_14-22-34.png|
+
+| 
 
 Distributed Ledger Layer
 ==========================
@@ -78,12 +81,11 @@ and when a requested block cannot be found, it reads the
 block from a disk and loads it into the memory. Depending on
 frequency of use, it is possible to determine blocks that
 should be kept in the memory and those that should not, and
-thus a cache effect with optimal use of memory can be
-obtained.
-
+thus a cache effect with optimal use of memory can
+be achieved.
 
 Execution Layer
-================
+===================
 
 The Execution Layer (EL) executes, processes, and verifies
 transactions, providing important functions for the smart
@@ -107,7 +109,7 @@ written in Solidity. If a transaction being executed is a
 smart contract running on Ethereum, the EL executes the EVM.
 
 Bridge Layer
-=============
+==============
 
 The bridge layer (BL) is an important technical element that
 differentiates Eden from other blockchains and guarantees
@@ -137,48 +139,49 @@ Since the on-chain and off-chain modules are located in
 different networks, they configure a network on which they
 can securely communicate and exchange data.
 
+| 
 
 Service Architecture
-=====================
-
-.. image:: images/78413825/121045170.png
+===========================
 
 
-The above diagram shows service architecture of Edenchain
+|image2019-3-16_14-41-28.png|
+
+
+The above diagram shows service architecture of EdenChain
 from end to end.
 
-API module is the only one exposed to public allowing access
-from external system through API.
+The API module is the only one exposed to the public as it
+allows access to external systems.
 
-It receives all kinds of requests and forward to
-corresponding module. In that way We can keep access point
-consistent as well as securing platform by isolating core
-modules from external system.
+It receives all kinds of requests and forwards them to
+corresponding modules. In that this way we can keep access
+points consistent and secure the platform by isolating the
+core modules from external systems.
 
 EIAM plays an important role in service because it deals
-with internal communication in securing manner. Sensitive
-transactions such as sending, receiving coins are supposed
-to have a signature and EIAM comes into the picture with
-strong protection mechanism. dApp Server and dApp Client
-stands for blockchain business application. Those modules
-use Eden's API and SDK to build the service. 
+with internal communication in a secure manner. Sensitive
+transactions such as sending and receiving coins are
+supposed to have a signature and EIAM comes into the picture
+with a strong protection mechanism. dApp Server and dApp
+Client correspond to blockchain business applications. Those
+modules use Eden's API and SDK to build the service. 
 
-We have an internal cache system to respond client's request
-quickly. 2 kinds of query system are introduced file based
-and memory based one. These internal cache system boost
-Edenchain's performance.
+We have an internal cache system to respond to clients’
+requests quickly. Two kinds of query systems are introduced:
+file based and memory based ones. These internal cache
+system boost EdenChain 's performance.
 
 Coin server is a dedicated module for handling coin related
 requests to minimize transaction handling time. 
 
-Transaction server processes most of transaction except for
-coin thing.
-
+The transaction server processes most transaction except for
+coin related requests.
 
 Hypernode & Supernode
-=========================
+=======================
 
-Edenchain has adopted a sort of side chain into its
+EdenChain has adopted a sort of side chain into its
 architecture to achieve high performance, full
 controllability and security.
 
@@ -193,8 +196,8 @@ transaction data stored in each super blocks is fully
 secured, the transaction data hash key is stored in hyper
 nodes.
 
-You can regard super node as sidechain, hypernode as
-Edenchain's blockchain. 
+You can regard the supernode as a sidechain, the hypernode
+as EdenChain 's blockchain. 
 
 As the Eden network expands and the number of DApps
 increases, more super node/super block networks will be
@@ -208,13 +211,8 @@ through the super blocks.
 The below image explains dApp, super node and hyper node
 relationship.
 
-.. image:: images/78413825/122815262.png
 
-.
-
-
-
-
+|image2019-3-25_12-24-9.png|
 
 
 
@@ -228,25 +226,21 @@ relationship.
 
             .. container:: greybox
 
-               |image0|
-               `image2019-3-16_14-22-34.png <images/78413825/120783173.png>`__
-               (image/png)
-               |image1|
-               `image2019-3-16_14-38-19.png <images/78413825/120979691.png>`__
-               (image/png)
-               |image2|
-               `image2019-3-16_14-41-28.png <images/78413825/121045170.png>`__
-               (image/png)
-               |image3|
-               `image2019-3-25_12-24-9.png <images/78413825/122815262.png>`__
-               (image/png)
+              .. |image2019-3-16_14-22-34.png| image:: images/78413825/120783173.png
+
+              .. |image2019-3-16_14-38-19.png| image:: images/78413825/120979691.png
+
+              .. |image2019-3-16_14-41-28.png| image:: images/78413825/121045170.png
+
+              .. |image2019-3-25_12-24-9.png| image:: images/78413825/122815262.png
+
 
    .. container::
       :name: footer
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 28, 2019 12:30
+         Document generated by Confluence on Mar 29, 2019 14:48
 
          .. container::
             :name: footer-logo
@@ -265,4 +259,6 @@ relationship.
 .. |image3| image:: images/icons/bullet_blue.gif
    :width: 8px
    :height: 8px
+
+
 

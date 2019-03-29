@@ -29,7 +29,8 @@ Install SDK & Development for Javascript
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified on Mar 28, 2019
+            Created by Jacki Heo, last modified by Jay Lee on Mar 29,
+            2019
 
          .. container:: wiki-content group
             :name: main-content
@@ -53,7 +54,7 @@ Install SDK & Development for Javascript
 
             ::
 
-               npm install edenchain-client-sdk
+               npm install EdenChain-client-sdk
 
             | 
 
@@ -70,7 +71,7 @@ Install SDK & Development for Javascript
             -  .. rubric:: Network settings 
                   :name: InstallSDK&DevelopmentforJavascript-Networksettings
 
-            Set up the network of the Edenchain to connect through the
+            Set up the network of the EdenChain to connect through the
             SDK. There are currently three networks. You have to set up
             a network to test, which is always the first thing you need
             to do when using the SDK.
@@ -82,9 +83,9 @@ Install SDK & Development for Javascript
 
             ::
 
-               EDENCHAIN_MAINNET_NETWORK      : Edenchain MainNet General Release 
-               EDENCHAIN_CANDIDATE_RELEASE    : Edenchain Candidate Release
-               EDENCHAIN_BETA_RELEASE         : Edenchain Beta Release
+               EdenChain_MAINNET_NETWORK      : EdenChain MainNet General Release 
+               EdenChain_CANDIDATE_RELEASE    : EdenChain Candidate Release
+               EdenChain_BETA_RELEASE         : EdenChain Beta Release
 
             | 
 
@@ -111,8 +112,8 @@ Install SDK & Development for Javascript
             -  .. rubric:: Authentication
                   :name: InstallSDK&DevelopmentforJavascript-Authentication
 
-            It provides a sign in and sign up with Edenchain. Sign Up
-            provides an Edenchain for creating accounts and wallets, and
+            It provides a sign in and sign up with EdenChain. Sign Up
+            provides an EdenChain for creating accounts and wallets, and
             Sign In provides sign-in to pre-created accounts.
 
             | 
@@ -196,7 +197,7 @@ Install SDK & Development for Javascript
 
             To use all api, you need a token that you received when
             authenticating. The token is used to invoke the api, and all
-            modules in the Edenchain use the token to verify the
+            modules in the EdenChain use the token to verify the
             authentication.
 
             All APIs are async.
@@ -243,7 +244,7 @@ Install SDK & Development for Javascript
 
                async getUserInfo(iamtoken)
 
-            It returns user information on the Edenchain. It mainly
+            It returns user information on the EdenChain. It mainly
             returns token address, token deposit, or ethereum address
             information to be used for withdraw.
 
@@ -259,7 +260,7 @@ Install SDK & Development for Javascript
                                 email           (String):  User email address
                                 eth_address     (String): It is the ethereum address of the user added / deleted by api, and may contain multiple addresses as delimiter with '|'.
                                                           withdraw or deposit of api will refuse to withdraw or deposit to unregistered address.
-                                tedn_public_key (String):  Edenchain user wallet address
+                                tedn_public_key (String):  EdenChain user wallet address
 
             | 
 
@@ -316,8 +317,8 @@ Install SDK & Development for Javascript
 
                return:
                             [{}]        :   Returns a list of objects and each of which has the following information:
-                                         from_addr  (String) :  Address in Edenchain to withdraw the amount
-                                         to_addr    (String) : Address in Edenchain to deposit the amount
+                                         from_addr  (String) :  Address in EdenChain to withdraw the amount
+                                         to_addr    (String) : Address in EdenChain to deposit the amount
                                          amount     (int )   :  token amount corresponding to tx, and decimal 18.
                                          regdate    (int)    : The time at which tx was performed, in seconds.
 
@@ -371,7 +372,7 @@ Install SDK & Development for Javascript
                async depositTokenToEdenChain(iamtoken,txhash)
 
             It is the API that is called when the Ethereum ERC20 EDN
-            Token is passed for the Edenchain service.
+            Token is passed for the EdenChain service.
 
             | 
 
@@ -390,14 +391,14 @@ Install SDK & Development for Javascript
                amount)
 
             It is the API that is called when the Ethereum ERC20 EDN
-            Token is passed for the Edenchain service.
+            Token is passed for the EdenChain service.
 
             | 
 
             ::
 
                parameter  :
-                            iamtoken   (String):  It is the API that is called when the Ethereum ERC20 EDN Token is passed for the Edenchain service.
+                            iamtoken   (String):  It is the API that is called when the Ethereum ERC20 EDN Token is passed for the EdenChain service.
                             ethaddress (String):  The address on the Ethereum to deposit. It must be registered by addEthAddress () in advance.
                             amount     (int)   : Amount to receive and it is decimal 18.
 
@@ -418,7 +419,7 @@ Install SDK & Development for Javascript
 
             This is a helper function to easily create the address
             object needed for the API that is called when the user adds
-            / deletes the Ethereum address to Edenchain with the
+            / deletes the Ethereum address to EdenChain with the
             Ethereum private key.
 
             | 
@@ -441,10 +442,12 @@ Install SDK & Development for Javascript
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 28, 2019 14:29
+         Document generated by Confluence on Mar 29, 2019 14:48
 
          .. container::
             :name: footer-logo
 
             `Atlassian <http://www.atlassian.com/>`__
+
+
 

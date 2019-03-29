@@ -24,15 +24,14 @@
 
          .. container:: page-metadata
 
-            Created by James Ahn, last modified by Hailee Kim on Mar 26,
+            Created by James Ahn, last modified by Jay Lee on Mar 29,
             2019
 
          .. container:: wiki-content group
             :name: main-content
 
-            
 Overview
-==========
+===========
 
 Eden is a blockchain-based programmable economy platform
 that provides high-performance processing speeds which
@@ -62,8 +61,7 @@ namespaces with Merkle Tree, isolates transactions based on
 its particular namespace, and secures performance and
 scalability by constructing an execution system capable of
 parallel processing by namespace. This enables the ability
-to carry out a vast number of transactions simultaneously in
-parallel.
+to carry out a vast number of transactions in parallel.
 
 Eden supports Solidity, the most popular smart contract
 language at this time, as well as Dyerium's EVM since smart
@@ -71,12 +69,12 @@ contracts are heavily used for sensitive services such as
 payment and settlement. Stable and reliable smart contract
 programming languages are more important than the creation
 of an unnecessary new type of programming language.  The
-emergence of a new type of language that requires a long
-time to be validated through constant testing and can be
-exposed to serious security vulnerabilities during this
-validation period. Eden constructs a blockchain using EVM
-and Solidity, which are verified and continually improved by
-the community.
+development of a new type of language requires a long time
+to be validated through constant testing and can be exposed
+to serious security vulnerabilities during this validation
+period. Eden constructs a blockchain using EVM and Solidity,
+which are verified and continually improved by the
+community.
 
 Since Eden guarantees secured connectivity, one can fully
 realize a programmable economy by trading various
@@ -86,7 +84,7 @@ the owner of a particular asset can take part in both P2P
 transactions and transactions on exchanges.
 
 Permissioned Blockchain
-========================
+==========================
 
 A permissioned blockchain has evolved as an alternative to
 permissionless blockchain technology, which allows anyone to
@@ -127,70 +125,68 @@ nodes within namespaces which helps guarantee 100 percent
 processing of all transactions.
 
 Design Principle
-===================
-
+========================
 
 The design principle is important especially when it comes
 to platform software because the principle resolves conflict
 among many software modules as well as giving guideline to
-keep architectual consistency.
+keep architectural consistency.
 
-The technical problems edenchain wants to deal with are 3
-items.
+The technical problems EdenChain wants to deal with consists
+of three items.
 
-#. To provide scalable blockchain platform where required
-    performance will be delivered with ease
-#. To guarantee non-stop blockchain platform to its users 
-#. To accelerate blockchain business service 
+#. To provide a scalable blockchain platform where required
+   performance will be delivered with ease
+#. To guarantee a non-stop blockchain platform to its users 
+#. To accelerate blockchain as a business service 
 
-So the selected design principle is supposed to meet those
-requirements. Scalability, High-Availability and
-Accessibility are 3 design principles adopted in Edenchain
-architecture.
+So any design principle must meet those requirements:
+Scalability, High-Availability and Accessibility. All are
+adopted in the EdenChain architecture.
 
 Scalability
-------------------
+------------
 
-As we know, scalability means that increasing or decreasing
-capacity of processing power to handle received tasks.
-Scalability is the top priority demanded by most of
-blockchain services since existing blockchain platforms are
-not suitable to process real world workload. Basically there
-are 2 options to smooth scalability, scale up and scale out.
-Edenchain achieves the scalability through scale out.
+As we know, scalability means increasing or decreasing
+processing power to handle all received tasks. Scalability
+is the top priority demanded by most of blockchain services
+since existing blockchain platforms are not suitable to
+process real world workloads. There are basically two
+options to smooth scalability: scale up and scale out.
+EdenChain achieves scalability through scale out.
 
 The basic idea for the scale out is doing parallel
-processing in distributed manner. Handling massive workload
-simultaneously needs to have multiple computing resources
-which can digest its given workload in distributed
-environment. So scalability design principle forces to have
-a design which allows workload distribution by algorithm,
-data structure and so on.
+processing in a distributed manner. Handling a massive
+workload simultaneously requires multiple computing
+resources which can digest the given workload in a
+distributed environment. So the scalability design principle
+forces one to have a design which allows for a workload
+distribution by algorithm, data structure and so on.
 
-.. image:: images/120161393/121045240.png
+|image2019-3-16_16-25-57.png|
 
 Accessibility
------------------
+--------------
 
-Accessibility takes important position when it comes to
+Accessibility takes an important position when it comes to a
 blockchain service implementation. What if the technology
-which solves blockchain's major tech problems is not easy to
-learn, and hard to find right developers. 
+which solves blockchain's major tech problems was not easy
+to learn, and it was hard to find qualified developers?
 
-The blockchain platform should be easy to use and learn, not
-hard to find developers for fast pervasiveness even though
-architecture should sacrificing flexibility and
+The blockchain platform should be easy to use and learn, it
+should not be hard to find developers for quick development
+and the architecture should not sacrifice flexibility and
 functionality. 
 
-In Edenchain, accessibility is the second important design
-principle to fulfill its vision, permissioned blockchain
-platform for enterprises.
+In EdenChain, accessibility is the second important design
+principle needed to fulfill its vision, namely that of a
+permissioned blockchain platform for enterprises.
 
 High Availability
 -------------------
 
-Since Eden is a permissioned blockchain, a consideration of
-service availability is necessary. Given that an Eden server
+Since Eden is a permissioned blockchain, service
+availability must be considered. Given that an Eden server
 is operated by a small number of authorized agencies or
 companies, the server operation can be terminated when many
 hackers attack the servers or when there is a natural
@@ -213,13 +209,13 @@ continents is composed of a Virtual Private Network (VPN).
 Cloud services provide connectivity between data centers
 across continents with high-speed dedicated lines, enabling
 fast networking and a data center-to-data center
-configuration. A multi-datacenter pattern is a pattern
-provided by the cloud service provider Amazon. It is used by
-a number of Internet companies such as the Apache
-Foundation, Netflix, CloudFoundry, and Attlasian, and is
-also recommended by Microsoft Azure.
+configuration. An example of a multi-datacenter pattern is
+the pattern provided by the cloud service provider Amazon.
+It is used by a number of Internet companies such as the
+Apache Foundation, Netflix, CloudFoundry, and Attlasian, and
+is also recommended by Microsoft Azure.
 
-.. image:: images/120161393/120979718.png
+|image2019-3-16_15-12-24.png|
 
 *The above image shows a configuration of an operating
 environment of Eden to which a multi data center pattern and
@@ -260,16 +256,16 @@ VPN networking with the other service zones.
 
 
 Consensus Algorithm
-========================
+============================
 
 POET
-------
+-----------------
 
-The consensus algorithm plays an important role in a
-blockchain technique. There are two approaches. The first is
-"Nakamoto Consensus," which is a way to conduct a leader
-selection through a lottery process. When selected as a
-leader, one has the right to authenticate a previous block
+The consensus algorithm plays an important role in
+blockchain technology. There are two approaches. The first
+is a "Nakamoto Consensus," which is a way to conduct a
+leader selection through a lottery process. When selected as
+a leader, one has the right to authenticate a previous block
 and to create a new block. In case of Bitcoin, a node that
 solves a hash puzzle first is selected as the leader. The
 second method uses "BFT (Byzantine Fault Tolerance)." This
@@ -292,7 +288,11 @@ follows an exponential distribution as a random number and
 selects the node that has the smallest wait time as the
 leader.
 
-.. image:: images/120161393/120979713.png
+
+
+|image2019-3-16_15-11-57.png|
+
+
 
 PoET is designed to follow the Poisson distribution, which
 is a form of discrete probability distribution that follows
@@ -300,17 +300,15 @@ the exponential distribution shown below and expresses how
 many times a certain number of events occur within a unit
 time if the event is independent.
 
-
 Namespace
-===============
-
+=============
 
 Eden uses a Radix Merkle Tree to store a current state of
 the blockchain. Validator nodes that check conformity of
-blocks all contain Radix Merkle Tree. Radix Merkle Tree
+blocks all contain a Radix Merkle Tree. A Radix Merkle Tree
 displays some data with optimal space. If there is only one
-child node, it unites the nodes into one, so it can
-effectively use memory.
+child node, it unites the nodes into one, so it can use
+memory more effectively.
 
 In a leaf node of the Radix Merkle Tree, a node address is
 included, and thus it is possible to identify a sibling or a
@@ -320,7 +318,10 @@ within a block and a batch to verify the transaction.
 
 Node Address = Namespace + Node Path
 
-.. image:: images/120161393/120979726.png
+
+
+|image2019-3-16_15-14-19.png|
+
 
 A namespace is a form of identification value for
 ascertaining the type of transaction and all transactions in
@@ -339,26 +340,50 @@ to execute one transaction at a time due to data consistency
 issues as is the case for many existing solutions in the
 blockchain space.
 
-.. image:: images/120161393/121045210.png
+
+|image2019-3-16_15-14-2.png|
+
 
 REST API
-==========
+===========
 
-REST API is core part of Edenchain to let developer build
-blockchain business application quickly and easily.
+REST API is core part of EdenChain and enables developers to
+build blockchain business application quickly and easily.
 
-REST API is the tool to realize the design principle,
+REST API is the tool to realize the second design principle,
 accessibility. REST API is well known in software and
-furthermore it is defacto standard for any kinds of
+furthermore it is the default standard for many kinds of
 integration. 
 
-Edenchain enables developer create blockchain business
-application by using REST API only. Developer is not
-supposed to have deep knowledge in blockchain nor Edenchain
-as long as developer knows how to use REST API. Edenchain
-aims to provide intuitive REST API to developer, so less
-than half day, developer can start service implementation by
+EdenChain enables developers to create blockchain business
+application solely by using REST API. A developer need not
+have a deep knowledge in blockchain nor EdenChain as long as
+the developer knows how to use REST API. EdenChain aims to
+provide an intuitive REST API to developers, so in less than
+half a day, a developer could begin implementation just by
 reading API documents and sample codes.
+
+
+
+         .. container:: pageSection group
+
+            .. container:: pageSectionHeader
+
+               .. rubric:: Attachments:
+                  :name: attachments
+                  :class: pageSectionTitle
+
+            .. container:: greybox
+
+              .. |image2019-3-16_15-11-57.png| image:: images/120161393/120979713.png
+
+              .. |image2019-3-16_15-12-24.png| image:: images/120161393/120979718.png
+
+              .. |image2019-3-16_15-14-2.png| image:: images/120161393/121045210.png
+
+              .. |image2019-3-16_15-14-19.png| image:: images/120161393/120979726.png
+
+              .. |image2019-3-16_16-25-57.png| image:: images/120161393/121045240.png
 
 
    .. container::
@@ -366,7 +391,7 @@ reading API documents and sample codes.
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 28, 2019 12:30
+         Document generated by Confluence on Mar 29, 2019 14:48
 
          .. container::
             :name: footer-logo
@@ -388,4 +413,6 @@ reading API documents and sample codes.
 .. |image4| image:: images/icons/bullet_blue.gif
    :width: 8px
    :height: 8px
+
+
 

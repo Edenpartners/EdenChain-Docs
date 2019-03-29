@@ -27,36 +27,37 @@ Hyper Node
 
          .. container:: page-metadata
 
-            Created by Jacki Heo, last modified on Mar 28, 2019
+            Created by Jacki Heo, last modified by Jay Lee on Mar 29,
+            2019
 
          .. container:: wiki-content group
             :name: main-content
 
-            Hyper node means Edenchain's blockchain. In Edenchain's
-            architecture, transaction handling is mainly done by super
-            node, and hyper node's major role is anchoring data and
-            processing its native coin.
+            Hypernode means EdenChain's blockchain. In EdenChain 's
+            architecture, transaction handling is mainly done by the
+            supernode, and the hypernode's major role is anchoring data
+            and processing its native coin.
 
-            Edenchain does not put all the data produced by super node
-            into its blockchain for scalability. In this picture there
-            is a possibility super node might manipulate data, so to
-            prevent from such kinds of cheating, hyper nodes does
-            anchoring. Whenever super nodes generate new transaction
-            data, anchoring will be done automatically by anchoring
-            server in conjunction with transaction server. 
+            EdenChain does not put all the data produced by a supernode
+            into its blockchain for scalability reasons. In this picture
+            there is a possibility a supernode might manipulate data, so
+            to prevent such kinds of cheating, hypernodes allow for
+            anchoring. Whenever supernodes generate new transaction
+            data, anchoring will be done automatically by the anchoring
+            server in conjunction with the transaction server. 
 
             .. rubric:: Anchoring
                :name: HyperNode-Anchoring
 
-            Coin server and Transaction server are supposed to do
+            TheCoin server and Transaction server are supposed to do
             anchoring whenever it processes transactions. 
 
-            Hyper node stores anchoring value to dedicated internal
-            namespace. It is only accessible by special transaction
+            Thehypernodestoresananchoring value toadedicated internal
+            namespace. It is only accessible byaspecial transaction
             processor. 
 
-            The transaction processor has writing function only and the
-            processor puts written time into global state.
+            The transaction processoronlyhas write capability and it
+            imprints a timestampintotheglobal state.
 
             .. rubric:: Data to be anchored
                :name: HyperNode-Datatobeanchored
@@ -67,8 +68,8 @@ Hyper Node
             When the Coin Server deposits or Withdraws, the
             corresponding audit data is stored in the repository. Here,
             it allows processing the user's request at a later time.
-            However, the value can not be found because it has been
-            arbitrarily changed or for other reasons.
+            However, the valuecannotbe foundwhenit has been arbitrarily
+            changed or for other reasons.
 
             When this happens, it is impossible to determine whether the
             value is reliable or not.
@@ -78,16 +79,16 @@ Hyper Node
             possible to identify a problem in a specific part when a
             problem occurs later.
 
-            It is cut by 10 units, Hashed and becomes one Tx, and one
+            It is cut bytenunits,hashed and becomes one Tx, and one
             batch is uploaded to the server by 10 transactions.
             Therefore, anchoring is one transaction for 1-10 and 10
             transactions for batch. Therefore, a total of 100
-            transactions are uploaded as one. (The unit to be cut is
+            transactions are uploaded as one. (The unit to be cut is
             Record ID.)
 
                10 records → 1 TX  =>  10TX → 1 Batch
 
-            If you do not know the last anchor data due to server
+            If you do not know the last anchor data due toaserver
             restart, check if the NameSpace exists with the last digit.
             Update the case if it does not exist.
 
@@ -107,9 +108,9 @@ Hyper Node
             and the data after processing due to the time lag in
             processing the transaction.
 
-            TX and the layout configuration is the same as Coin Server
-            that 10 records are composed of 1 tx and 10 tx is composed
-            of 1 batch.
+            TX and the layout configurationarethe same as Coin
+            Serverinthat 10 records are composed of 1 tx and 10 tx is
+            composed of 1 batch.
 
             As described above, the hash value of the data is the
             hashing value to sha512 after attaching all the values ​​of
@@ -119,13 +120,13 @@ Hyper Node
                :name: HyperNode-IncrementalAnchor
 
             In order to insert the calculated Sha512 into the Anchor TP,
-            the Anchor Server checks the ID that has been incremented
-            every certain time and continuously makes hash after push.
+            the Anchor Server checks the ID that has been incrementedat
+            regular intervalsand continuously hashes after every push.
             This is because the ID value continues to increase.
 
-            At this time, it should be able to skip the existing pushes
-            and add only new ones. First, it saves last-id until the
-            point where it inserted. 
+            Atthattime, it should be able to skip the existing pushes
+            and add only new ones.Noteit savesthelast-idupuntil the
+            point where itwasinserted. 
 
             | 
 
@@ -136,10 +137,12 @@ Hyper Node
 
       .. container:: section footer-body
 
-         Document generated by Confluence on Mar 28, 2019 12:30
+         Document generated by Confluence on Mar 29, 2019 14:48
 
          .. container::
             :name: footer-logo
 
             `Atlassian <http://www.atlassian.com/>`__
+
+
 
