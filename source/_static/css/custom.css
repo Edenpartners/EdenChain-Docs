@@ -231,3 +231,6 @@ a:visited {
     display: none;
 }
 
+blockquote {
+    font-weight: bold;
+}
