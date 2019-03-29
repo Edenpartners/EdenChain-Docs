@@ -108,15 +108,15 @@ Build E-Wallet 
             .. rubric:: Overview
                :name: BuildE-Wallet-Overview
 
-            The e-wallet GIT source has removed the necessary firebase,
+            The e-wallet GIT source has removed the necessary authentication,
             facebook, twitter and google config settings for the app. If
             you do not take any action due to setting conflicts of Ionic
             Plugins, a build error occurs when creating the Android /
             iOS Platform environment.
 
             Build environment should be set up using a separate script
-            which is designed to automatically remove Android, iOS,
-            firebase related conflicts and build conflicts.
+            which is designed to automatically remove Android, iOS
+            related conflicts and build conflicts.
 
             .. rubric:: E-Wallet Project Reset
                :name: BuildE-Wallet-E-WalletProjectReset

@@ -121,7 +121,7 @@ Public Interface API Specification
             **JSON-RPC Parameter:**
 
             "iamtoken" (string) - IAM authentication token - value
-            received when authentication through Firebase is successful
+            received when authentication through authentication is successful
 
             "txhash" (string) - Transaction Hash - Transaction Hash
             value when EDN is delivered via Ethereum
@@ -408,7 +408,7 @@ Public Interface API Specification
 
             -  POST /api
 
-            Because the actual signup is handled by firebase, EIAM uses
+            Because the actual signup is handled by authentication, EIAM uses
             it for incidental processing besides email and password
             information.
 
@@ -446,7 +446,7 @@ Public Interface API Specification
             -  POST /api
 
             There is no parameter to call after successful sign-in in
-            Firebase.
+            authentication.
 
             Adjusts the time of last_siginin, which causes an error when
             other users access after signed out.
@@ -484,7 +484,7 @@ Public Interface API Specification
             -  POST /api
 
             There is no parameter to call after successful sign-out in
-            Firebase. Nothing is being done at this time.
+            authentication. Nothing is being done at this time.
 
             .. rubric:: Parameter
                :name: PublicInterfaceAPISpecification-Parameter.4
