@@ -12,5 +12,5 @@ Wallet
 
 Wallet Test Version
 ^^^^^^^^^^^^^^^^^^^^^^
-- Android : `https://play.google.com/apps/testing/io.edenchain.edenwallet <https://play.google.com/apps/testing/io.edenchain.edenwallet>`_
+- Android : `Download from Google Play <https://play.google.com/apps/testing/io.edenchain.edenwallet>`_
 
