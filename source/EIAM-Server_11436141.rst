@@ -155,9 +155,8 @@ EIAM Server
             For reasons of performance and simplicity, only one EUser
             model is used, which seems to be sufficient at this point.
 
-            | 
 
-            .. code:: p1
+            .. code::
 
                class EUser(db.Model):
                    """A naive Contact model."""
@@ -182,6 +181,7 @@ EIAM Server
                    member_since = db.DateTimeProperty(auto_now_add=True)
                    last_login = db.DateTimeProperty()
                    last_logout = db.DateTimeProperty()
+
 
             .. rubric:: Signin, Signout Handling
                :name: EIAMServer-Signin,SignoutHandling
@@ -267,7 +267,7 @@ EIAM Server
 
             | 
 
-            .. code:: p1
+            .. code::
 
                  function call_jsonrpc(uri,method,param,callback)
                  {  
@@ -641,7 +641,10 @@ EIAM Server
 
                -  signed transaction signature
 
-            | 
+            .. toctree::
+               :maxdepth: 1
+               
+               eiam_data_encryption_120390674.rst 
 
             | 
 
