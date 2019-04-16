@@ -14,3 +14,7 @@ Wallet Test Version
 ^^^^^^^^^^^^^^^^^^^^^^
 - Android : `Download from Google Play <https://play.google.com/apps/testing/io.edenchain.edenwallet>`_
 - iOS : `Download with Testflight <https://testflight.apple.com/join/JZVmXhMz>`_
+
+Faucet
+^^^^^^^^^^^^
+- `Get EDN For Test <https://faucet.edenchain.io/>`_
