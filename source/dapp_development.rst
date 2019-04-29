@@ -10,6 +10,8 @@ dApp Development
 
     Internal_Communication_105316544.rst
     Urlscheme-and-Universal-Link-definition_80576581.rst
-    Public-Interface-API-Specification_55509016.rst
+    Public_Interface_API_Specification_140935184.rst
     EIAM-Server_11436141.rst
     Data-Models_14254471.rst
+    EDN_Faucet_139067463.rst
+    E-Explorer_API_Specification_135397597.rst
