@@ -10,15 +10,13 @@ Wallet
    build_e-wallet_122782513.rst
    Wallet-Sequence-Diagram_122848028.rst
 
-Wallet Test Version
-^^^^^^^^^^^^^^^^^^^^^^
+
+.. rubric:: Wallet Test Version
 - Android : `Download from Google Play <https://play.google.com/apps/testing/io.edenchain.edenwallet>`_
 - iOS : `Download with Testflight <https://testflight.apple.com/join/JZVmXhMz>`_
 
-E-Explorer for Candidate Release
-^^^^^^^^^^^^
+.. rubric:: E-Explorer for Candidate Release
 - `Go to Page <https://eexplorer-cr.edenchain.io/>`_
 
-Faucet
-^^^^^^^^^^^^
+.. rubric:: Faucet
 - `Get EDN For Test <https://faucet.edenchain.io/>`_
