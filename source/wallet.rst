@@ -11,7 +11,7 @@ Wallet
    Wallet-Sequence-Diagram_122848028.rst
 
 
-.. rubric:: Wallet Test Version for Beta Release
+.. rubric:: Wallet Test Version
 - Android : `Download from Google Play <https://play.google.com/apps/testing/io.edenchain.edenwallet>`_
 - iOS : `Download with Testflight <https://testflight.apple.com/join/JZVmXhMz>`_
 
