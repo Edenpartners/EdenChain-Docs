@@ -57,7 +57,7 @@ Hyper Node Anchoring Interface
                {
                'type': 'anchor',
                'kind': 'supernode',
-               'category': 'TEDN',
+               'category': 'TEDN'
                }
 
             | 
